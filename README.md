@@ -2,7 +2,7 @@
 
 *A 7-agent LangGraph system that turns a Business Requirements Document into a decision-ready engineering pack for Engineering Managers.*
 
-Capstone 1 (Applied Agentic AI for Engineering Managers). Turns a raw Business Requirements Document (BRD) into a decision-ready **engineering pack** — plan, schedule, architecture, PoC scope and tech-stack options — grounded in organisational knowledge (RAG), checked by a Critic with a bounded revision loop, badged GREEN / AMBER / RED, and gated by the Engineering Manager (EM) before anything is exported.
+Applied Agentic AI for Engineering Managers turns a raw Business Requirements Document (BRD) into a decision-ready **engineering pack** — plan, schedule, architecture, PoC scope and tech-stack options — grounded in organisational knowledge (RAG), checked by a Critic with a bounded revision loop, badged GREEN / AMBER / RED, and gated by the Engineering Manager (EM) before anything is exported.
 
 Built with **Python + LangGraph** (orchestration graph, Critic loop, human-in-the-loop interrupt) and **LangChain** chat models (`ChatOpenAI` / `ChatAnthropic`). Runs **fully offline** by default; OpenAI or Anthropic is opt-in.
 
@@ -28,7 +28,7 @@ Open `outputs/<run_id>/dashboard.html` and `engineering_pack.md` to see the resu
 
 All dependencies are pinned in `pyproject.toml` (`langgraph`, `langchain-core`, `pydantic`, `numpy`, `scikit-learn`, `python-docx`, `reportlab`; extras: `openai` → `langchain-openai`, `anthropic` → `langchain-anthropic`, `dev` → `pytest`).
 
-From the project folder (`brd2eng/`) in PowerShell:
+From the project folder in PowerShell:
 
 ```powershell
 python -m venv .venv
