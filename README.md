@@ -282,5 +282,5 @@ tests/                   pytest suite
 - The offline engine is a deterministic stand-in for LLM reasoning (formulaic prose, strong traceability). The LangChain/OpenAI path is tested with mocked models; run a live check with your own key.
 - Offline, the LLM-as-Judge is a labelled heuristic proxy that shares logic with the Critic.
 - Synthetic knowledge base and eval set; replace with your organisation's sanitised BRDs, templates and history for real use.
-- Regex-based PII/injection detection; add an NER PII detector for production.
+- Regex-based PII/injection detection
 - HITL checkpoints are in-memory (single process); use a persistent LangGraph checkpointer (e.g. SQLite/Postgres) for multi-user or resumable runs.
