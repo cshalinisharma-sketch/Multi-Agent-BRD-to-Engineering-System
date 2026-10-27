@@ -2,7 +2,7 @@
 
 **Tool track:** code (Python 3.11+, **LangGraph** for orchestration, **LangChain** chat models for LLM calls, pydantic v2, scikit-learn, numpy, reportlab). The workflow is a LangGraph `StateGraph` (`src/graph.py`); stage logic lives in `Pipeline` (`src/agents/orchestrator.py`), so every hand-off, retry and revision stays explicit and testable. `--engine classic` runs the same stages as a plain-Python loop with identical outputs.
 
-**LLM providers:** OpenAI (`ChatOpenAI`) or Anthropic (`ChatAnthropic`) through LangChain, opt-in behind a data-boundary confirmation (with model routing: small model for routing/critic/scheduling, large model for planning/architecture/stack). Without a key the system runs in **offline mode**: every agent has a deterministic heuristic generator that honours the same output contract. This makes the whole pipeline, eval suite and demo reproducible on any laptop, and doubles as the fallback when an LLM keeps violating its contract.
+**LLM providers:** OpenAI (`ChatOpenAI`) through LangChain, opt-in behind a data-boundary confirmation (with model routing: small model for routing/critic/scheduling, large model for planning/architecture/stack). Without a key the system runs in **offline mode**: every agent has a deterministic heuristic generator that honours the same output contract. This makes the whole pipeline, eval suite and demo reproducible on any laptop, and doubles as the fallback when an LLM keeps violating its contract.
 
 ## 1.1 System diagram (workflows → agents → tools → actions, with error paths)
 
@@ -110,7 +110,7 @@ START → ingest ─(rejected)→ END
 | External tool (Jira) transient error | `call_tool` retries with exponential backoff (demo: `BRD2ENG_SIMULATE_TOOL_FAILURE=1`) |
 | BRD contradictions / infeasible deadline | Never resolved silently: conservative default applied + documented, EM escalation ticket opened automatically |
 
-## 1.6 Capstone requirement mapping (from the Week-1 playbook)
+## 1.6 requirement mapping
 
 | Requirement | Where |
 |---|---|
