@@ -1,6 +1,6 @@
 # 2. Agent Contract Reference
 
-Principle: **one role = one job = one output contract.** Every contract is a pydantic v2 model in `src/contracts.py`; the generated JSON Schemas are in `docs/schemas/` (`python -m src.tools.export_schemas`). Every consumer re-validates its input with `guardrails.validate_handoff()`; a violation raises `ContractViolation`, is logged, and triggers the retry path.
+Principle: **one role = one job = one output contract.** Every contract is a pydantic v2 model in `src/contracts.py`; the generated JSON Schemas are in `docs/schemas/` (`python -m src.tools.export_schemas`). Every consumer re-validates its input with `guardrails.validate_handoff()` a violation raises `ContractViolation`, is logged, and triggers the retry path.
 
 ## Shared building blocks
 
