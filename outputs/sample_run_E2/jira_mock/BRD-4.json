@@ -1,0 +1,29 @@
+{
+  "request": {
+    "fields": {
+      "project": {
+        "key": "BRD"
+      },
+      "issuetype": {
+        "name": "Story"
+      },
+      "summary": "[CON-03] Must run on the org AWS platform.",
+      "description": "Traceability: CON-03",
+      "labels": [
+        "brd2eng",
+        "CON-03"
+      ],
+      "priority": {
+        "name": "Medium"
+      },
+      "parent": {
+        "key": "BRD-3"
+      }
+    }
+  },
+  "response": {
+    "id": "10004",
+    "key": "BRD-4",
+    "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-4"
+  }
+}

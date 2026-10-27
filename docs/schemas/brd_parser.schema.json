@@ -1,0 +1,282 @@
+{
+  "$defs": {
+    "Constraints": {
+      "properties": {
+        "deadline_weeks": {
+          "anyOf": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Deadline Weeks"
+        },
+        "team_size": {
+          "anyOf": [
+            {
+              "type": "integer"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Team Size"
+        },
+        "budget": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Budget"
+        },
+        "deployment": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Deployment"
+        }
+      },
+      "title": "Constraints",
+      "type": "object"
+    },
+    "Flag": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "ambiguity",
+            "contradiction",
+            "missing_section",
+            "feasibility",
+            "injection",
+            "pii",
+            "scope"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "severity": {
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ],
+          "title": "Severity",
+          "type": "string"
+        },
+        "message": {
+          "title": "Message",
+          "type": "string"
+        },
+        "brd_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Brd Refs",
+          "type": "array"
+        },
+        "resolution": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Conservative default applied, if any",
+          "title": "Resolution"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "severity",
+        "message"
+      ],
+      "title": "Flag",
+      "type": "object"
+    },
+    "Requirement": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "text": {
+          "title": "Text",
+          "type": "string"
+        },
+        "section": {
+          "title": "Section",
+          "type": "string"
+        },
+        "category": {
+          "enum": [
+            "functional",
+            "non_functional",
+            "integration",
+            "constraint",
+            "data"
+          ],
+          "title": "Category",
+          "type": "string"
+        },
+        "subcategory": {
+          "default": "general",
+          "title": "Subcategory",
+          "type": "string"
+        },
+        "priority": {
+          "default": "must",
+          "enum": [
+            "must",
+            "should",
+            "could"
+          ],
+          "title": "Priority",
+          "type": "string"
+        },
+        "ambiguous_terms": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Ambiguous Terms",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "text",
+        "section",
+        "category"
+      ],
+      "title": "Requirement",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "brd_id": {
+      "title": "Brd Id",
+      "type": "string"
+    },
+    "content_hash": {
+      "title": "Content Hash",
+      "type": "string"
+    },
+    "title": {
+      "title": "Title",
+      "type": "string"
+    },
+    "domain": {
+      "title": "Domain",
+      "type": "string"
+    },
+    "classification": {
+      "default": "internal",
+      "title": "Classification",
+      "type": "string"
+    },
+    "objectives": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Objectives",
+      "type": "array"
+    },
+    "in_scope": {
+      "items": {
+        "type": "string"
+      },
+      "title": "In Scope",
+      "type": "array"
+    },
+    "out_of_scope": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Out Of Scope",
+      "type": "array"
+    },
+    "requirements": {
+      "items": {
+        "$ref": "#/$defs/Requirement"
+      },
+      "title": "Requirements",
+      "type": "array"
+    },
+    "constraints": {
+      "$ref": "#/$defs/Constraints"
+    },
+    "stakeholders": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Stakeholders",
+      "type": "array"
+    },
+    "success_metrics": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Success Metrics",
+      "type": "array"
+    },
+    "open_questions": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Open Questions",
+      "type": "array"
+    },
+    "sections_found": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Sections Found",
+      "type": "array"
+    },
+    "missing_sections": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Missing Sections",
+      "type": "array"
+    },
+    "flags": {
+      "items": {
+        "$ref": "#/$defs/Flag"
+      },
+      "title": "Flags",
+      "type": "array"
+    }
+  },
+  "required": [
+    "brd_id",
+    "content_hash",
+    "title",
+    "domain",
+    "requirements"
+  ],
+  "title": "ParsedBRD",
+  "type": "object"
+}

@@ -1,0 +1,71 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BRD2Eng Run Dashboard</title>
+<style>
+:root{--bg:#f7f7f5;--card:#fff;--ink:#1d1d1f;--mute:#6b6b70;--line:#e3e3e0;--acc:#2b6cb0}
+@media (prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#141416;--card:#1d1d20;--ink:#ececee;--mute:#9a9aa2;--line:#2e2e33;--acc:#63b3ed}}
+:root[data-theme=dark]{--bg:#141416;--card:#1d1d20;--ink:#ececee;--mute:#9a9aa2;--line:#2e2e33;--acc:#63b3ed}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
+main{max-width:1100px;margin:0 auto;padding:24px 16px} h1{font-size:22px;margin:0 0 4px} h2{font-size:16px;margin:0 0 10px}
+.sub{color:var(--mute)} .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin-top:14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:13px} td,th{border-bottom:1px solid var(--line);padding:6px 8px;text-align:left}
+.badge{color:#fff;border-radius:6px;padding:1px 8px;font-size:12px;font-weight:600} .mono{font-family:ui-monospace,monospace}
+.kpi{font-size:28px;font-weight:700} ul{padding-left:18px;margin:6px 0} details{margin:6px 0} pre{white-space:pre-wrap;font-size:12px}
+</style></head><body><main>
+<h1>Merchant Dispute Resolution Portal</h1>
+<div class="sub">Run demo-20261027-081205-2ed5b3 · offline · profile tuned · HITL: approved</div>
+<div class="grid">
+ <div class="card"><h2>Final quality</h2><div class="kpi"><span class="badge" style="background:#1f9d55">GREEN</span> 4.95/5</div>
+   <div class="sub">1 revision round(s) · first round 4.87 (AMBER)</div></div>
+ <div class="card"><h2>EM decisions needed</h2><ul><li><b>SCH-1</b> (feasibility): p50 estimate 23.5 weeks exceeds the BRD deadline of 20 weeks (p80 28). A Must-only first release is estimated at 19 weeks.<br><small>Default: Escalated to EM: choose between extending the date, adding capacity, or a Must-only first release; schedule keeps the conservative (longer) estimate.</small></li></ul></div>
+ <div class="card"><h2>Pipeline health</h2><div class="sub">agent executions 9 · errors 0 ·
+   tool calls 28 (success 0.964) · guardrail triggers 0 ·
+   contract violations 0</div></div>
+</div>
+<div class="card" style="margin-top:14px"><h2>Artifact scores (final) and score per revision</h2>
+<table><tr><th>Artifact</th><th>Badge</th><th>Overall</th><th>Cited</th><th>Coverage</th><th>Contradictions</th><th>Actionability</th><th>Overall by round</th></tr><tr><td>plan_generator</td><td><span class="badge" style="background:#1f9d55">GREEN</span></td><td>5.0</td><td>91%</td><td>100%</td><td>0</td><td>5.0</td><td class='mono'>5.0 → 5.0</td></tr><tr><td>schedule_estimator</td><td><span class="badge" style="background:#1f9d55">GREEN</span></td><td>5.0</td><td>100%</td><td>100%</td><td>0</td><td>5.0</td><td class='mono'>5.0 → 5.0</td></tr><tr><td>solution_architect</td><td><span class="badge" style="background:#1f9d55">GREEN</span></td><td>4.75</td><td>90%</td><td>100%</td><td>0</td><td>5.0</td><td class='mono'>4.75 → 4.75</td></tr><tr><td>poc_planner</td><td><span class="badge" style="background:#1f9d55">GREEN</span></td><td>5.0</td><td>100%</td><td>100%</td><td>0</td><td>5.0</td><td class='mono'>4.62 → 5.0</td></tr><tr><td>tech_stack_recommender</td><td><span class="badge" style="background:#1f9d55">GREEN</span></td><td>5.0</td><td>100%</td><td>100%</td><td>0</td><td>5.0</td><td class='mono'>5.0 → 5.0</td></tr></table>
+<canvas id="c" height="140" style="width:100%;margin-top:10px"></canvas></div>
+<div class="grid">
+ <div class="card"><h2>Cross-agent consistency</h2><ul><li>✅ schedule_phases_match_plan</li><li>✅ headcount_matches_plan</li><li>✅ schedule_matches_architecture_complexity</li><li>✅ schedule_not_below_analogs</li><li>✅ plan_template_fits_architecture</li><li>✅ poc_components_exist_in_architecture</li><li>✅ poc_fits_schedule</li><li>✅ stack_covers_architecture</li><li>✅ stack_familiarity_fits_timeline</li><li>✅ stack_respects_deployment</li></ul></div>
+ <div class="card"><h2>Critic feedback by round</h2><details open><summary>Round 0: <span class="badge" style="background:#d69e2e">AMBER</span> 4.87 — 1 issue(s) → revise</summary><ul><li><b>poc_planner</b> · unmeasurable_criteria · Actionability 3.5/5 (&lt; 4). Gaps: measurable success criteria: 83%; hard gate: unmeasurable PoC success criteria.</li></ul></details><details ><summary>Round 1: <span class="badge" style="background:#1f9d55">GREEN</span> 4.95 — 0 issue(s) → pass</summary><ul><li>none</li></ul></details></div>
+</div>
+<div class="grid">
+ <div class="card"><h2>Input guardrails</h2><ul><li>none at input</li></ul></div>
+ <div class="card"><h2>Architecture</h2><pre class="mermaid">flowchart LR
+  C1[&quot;Web Frontend (React SPA)&quot;]
+  C2[&quot;Application Service (modular)&quot;]
+  C3[&quot;Document Store (S3)&quot;]
+  C4[&quot;Notification Worker&quot;]
+  C5[&quot;Reporting Read Model&quot;]
+  C6[&quot;Visa and Mastercard dispute APIs Adapter&quot;]
+  C7[&quot;Internal payments ledger API Adapter&quot;]
+  C8[&quot;Corporate email service Adapter&quot;]
+  C9[&quot;Identity &amp; Access (SSO/OAuth2 + RBAC)&quot;]
+  C10[&quot;PostgreSQL (RDS)&quot;]
+  C11[&quot;Redis Cache&quot;]
+  C12[&quot;Observability (OpenTelemetry + Grafana)&quot;]
+  C1 --&gt; C2
+  C2 --&gt; C10
+  C1 --&gt; C9
+  C2 --&gt; C6
+  C2 --&gt; C7
+  C2 --&gt; C8
+  C2 --&gt; C3
+  C2 --&gt;|async| C4
+  C10 --&gt;|async| C5
+  C2 --&gt; C11</pre></div>
+</div>
+<div class="card" style="margin-top:14px"><h2>Per-agent cost & latency</h2>
+<table><tr><th>Agent</th><th>Runs</th><th>Errors</th><th>Latency ms</th><th>Tokens in</th><th>Tokens out</th><th>Cost</th></tr><tr><td>orchestrator</td><td>1</td><td>0</td><td>0</td><td>1312</td><td>237</td><td>$0.0000</td></tr><tr><td>plan_generator</td><td>1</td><td>0</td><td>56</td><td>2855</td><td>2138</td><td>$0.0000</td></tr><tr><td>schedule_estimator</td><td>1</td><td>0</td><td>4</td><td>3876</td><td>785</td><td>$0.0000</td></tr><tr><td>solution_architect</td><td>1</td><td>0</td><td>84</td><td>3433</td><td>1906</td><td>$0.0000</td></tr><tr><td>poc_planner</td><td>2</td><td>0</td><td>49</td><td>15665</td><td>1926</td><td>$0.0000</td></tr><tr><td>tech_stack_recommender</td><td>1</td><td>0</td><td>31</td><td>4948</td><td>986</td><td>$0.0000</td></tr><tr><td>critic</td><td>2</td><td>0</td><td>241</td><td>0</td><td>0</td><td>$0.0000</td></tr></table></div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>try{mermaid.initialize({startOnLoad:true,theme:matchMedia('(prefers-color-scheme: dark)').matches?'dark':'default'})}catch(e){}</script>
+<script>
+const d={"labels": ["R0", "R1"], "series": {"plan_generator": [5.0, 5.0], "schedule_estimator": [5.0, 5.0], "solution_architect": [4.75, 4.75], "poc_planner": [4.62, 5.0], "tech_stack_recommender": [5.0, 5.0]}};const c=document.getElementById('c');const x=c.getContext('2d');
+const W=c.width=c.clientWidth*devicePixelRatio,H=c.height=140*devicePixelRatio;x.scale(devicePixelRatio,devicePixelRatio);
+const w=W/devicePixelRatio,h=140,pad=30,cols=['#2b6cb0','#38a169','#d69e2e','#805ad5','#e53e3e'];
+const css=getComputedStyle(document.documentElement);x.strokeStyle=css.getPropertyValue('--line');x.fillStyle=css.getPropertyValue('--mute');x.font='11px system-ui';
+for(let v=3;v<=5;v+=0.5){const y=h-pad-(v-3)/2*(h-2*pad);x.beginPath();x.moveTo(pad,y);x.lineTo(w-10,y);x.stroke();x.fillText(v,8,y+4)}
+const n=d.labels.length,sx=i=>pad+(n<2?0:i*(w-pad-20)/(n-1));d.labels.forEach((l,i)=>x.fillText(l,sx(i)-6,h-8));
+Object.entries(d.series).forEach(([k,s],j)=>{x.strokeStyle=cols[j%5];x.lineWidth=2;x.beginPath();s.forEach((v,i)=>{const y=h-pad-(Math.max(v,3)-3)/2*(h-2*pad);i?x.lineTo(sx(i),y):x.moveTo(sx(i),y)});x.stroke();x.fillStyle=cols[j%5];x.fillText(k.split('_')[0],w-80,14+j*12)});
+</script></body></html>

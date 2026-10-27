@@ -1,0 +1,274 @@
+{
+  "$defs": {
+    "Analog": {
+      "properties": {
+        "project_id": {
+          "title": "Project Id",
+          "type": "string"
+        },
+        "chunk_id": {
+          "title": "Chunk Id",
+          "type": "string"
+        },
+        "complexity": {
+          "title": "Complexity",
+          "type": "integer"
+        },
+        "actual_weeks": {
+          "title": "Actual Weeks",
+          "type": "number"
+        },
+        "team_size": {
+          "title": "Team Size",
+          "type": "integer"
+        },
+        "variance_pct": {
+          "title": "Variance Pct",
+          "type": "number"
+        },
+        "req_count": {
+          "default": 0,
+          "title": "Req Count",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "project_id",
+        "chunk_id",
+        "complexity",
+        "actual_weeks",
+        "team_size",
+        "variance_pct"
+      ],
+      "title": "Analog",
+      "type": "object"
+    },
+    "Flag": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "ambiguity",
+            "contradiction",
+            "missing_section",
+            "feasibility",
+            "injection",
+            "pii",
+            "scope"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "severity": {
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ],
+          "title": "Severity",
+          "type": "string"
+        },
+        "message": {
+          "title": "Message",
+          "type": "string"
+        },
+        "brd_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Brd Refs",
+          "type": "array"
+        },
+        "resolution": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Conservative default applied, if any",
+          "title": "Resolution"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "severity",
+        "message"
+      ],
+      "title": "Flag",
+      "type": "object"
+    },
+    "PhaseEstimate": {
+      "properties": {
+        "brd_refs": {
+          "description": "Requirement IDs from the parsed BRD",
+          "items": {
+            "type": "string"
+          },
+          "title": "Brd Refs",
+          "type": "array"
+        },
+        "citations": {
+          "description": "chunk_ids retrieved from the knowledge base",
+          "items": {
+            "type": "string"
+          },
+          "title": "Citations",
+          "type": "array"
+        },
+        "assumption": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Documented assumption when the BRD is silent/ambiguous",
+          "title": "Assumption"
+        },
+        "phase_id": {
+          "title": "Phase Id",
+          "type": "string"
+        },
+        "effort_person_weeks": {
+          "exclusiveMinimum": 0,
+          "title": "Effort Person Weeks",
+          "type": "number"
+        },
+        "duration_weeks": {
+          "exclusiveMinimum": 0,
+          "title": "Duration Weeks",
+          "type": "number"
+        },
+        "start_week": {
+          "minimum": 0,
+          "title": "Start Week",
+          "type": "number"
+        },
+        "end_week": {
+          "exclusiveMinimum": 0,
+          "title": "End Week",
+          "type": "number"
+        },
+        "roles": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Roles",
+          "type": "array"
+        },
+        "basis": {
+          "title": "Basis",
+          "type": "string"
+        }
+      },
+      "required": [
+        "phase_id",
+        "effort_person_weeks",
+        "duration_weeks",
+        "start_week",
+        "end_week",
+        "basis"
+      ],
+      "title": "PhaseEstimate",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "phase_estimates": {
+      "items": {
+        "$ref": "#/$defs/PhaseEstimate"
+      },
+      "minItems": 1,
+      "title": "Phase Estimates",
+      "type": "array"
+    },
+    "total_duration_weeks": {
+      "title": "Total Duration Weeks",
+      "type": "number"
+    },
+    "p80_duration_weeks": {
+      "title": "P80 Duration Weeks",
+      "type": "number"
+    },
+    "total_effort_person_weeks": {
+      "title": "Total Effort Person Weeks",
+      "type": "number"
+    },
+    "headcount": {
+      "title": "Headcount",
+      "type": "integer"
+    },
+    "complexity_basis": {
+      "maximum": 5,
+      "minimum": 1,
+      "title": "Complexity Basis",
+      "type": "integer"
+    },
+    "analogs": {
+      "items": {
+        "$ref": "#/$defs/Analog"
+      },
+      "title": "Analogs",
+      "type": "array"
+    },
+    "deadline_weeks": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Deadline Weeks"
+    },
+    "fits_deadline": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Fits Deadline"
+    },
+    "assumptions": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Assumptions",
+      "type": "array"
+    },
+    "flags": {
+      "items": {
+        "$ref": "#/$defs/Flag"
+      },
+      "title": "Flags",
+      "type": "array"
+    }
+  },
+  "required": [
+    "phase_estimates",
+    "total_duration_weeks",
+    "p80_duration_weeks",
+    "total_effort_person_weeks",
+    "headcount",
+    "complexity_basis"
+  ],
+  "title": "Schedule",
+  "type": "object"
+}

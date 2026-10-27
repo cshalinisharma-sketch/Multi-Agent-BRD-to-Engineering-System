@@ -1,0 +1,18 @@
+{
+  "type": "simple",
+  "expected_status": "completed",
+  "acceptable_patterns": [
+    "layered",
+    "modular-monolith"
+  ],
+  "p50_weeks_range": [
+    6,
+    11
+  ],
+  "required_flag_kinds": [],
+  "stack_must_not_be_serverless": false,
+  "stack_must_include": [
+    "React"
+  ],
+  "reference_summary": "Lean three-phase plan: shape and setup, build MVP, pilot and launch. Layered web application with web frontend, application service, PostgreSQL database, notification of managers by email, HRIS employee directory adapter and corporate SSO. Schedule around 8 to 10 weeks with 3 engineers. PoC on the HRIS directory integration. Recommended stack: Java or Python service, React with TypeScript, PostgreSQL, ECS Fargate, Terraform."
+}

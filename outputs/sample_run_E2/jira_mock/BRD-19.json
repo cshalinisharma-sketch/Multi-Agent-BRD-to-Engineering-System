@@ -1,0 +1,29 @@
+{
+  "request": {
+    "fields": {
+      "project": {
+        "key": "BRD"
+      },
+      "issuetype": {
+        "name": "Story"
+      },
+      "summary": "[INT-03] Corporate email service.",
+      "description": "Traceability: INT-03",
+      "labels": [
+        "brd2eng",
+        "INT-03"
+      ],
+      "priority": {
+        "name": "High"
+      },
+      "parent": {
+        "key": "BRD-16"
+      }
+    }
+  },
+  "response": {
+    "id": "10019",
+    "key": "BRD-19",
+    "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-19"
+  }
+}

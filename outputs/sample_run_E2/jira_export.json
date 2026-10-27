@@ -1,0 +1,162 @@
+{
+  "epics": [
+    {
+      "phase": "PH1",
+      "id": "10002",
+      "key": "BRD-2",
+      "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-2"
+    },
+    {
+      "phase": "PH2",
+      "id": "10003",
+      "key": "BRD-3",
+      "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-3"
+    },
+    {
+      "phase": "PH3",
+      "id": "10005",
+      "key": "BRD-5",
+      "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-5"
+    },
+    {
+      "phase": "PH4",
+      "id": "10016",
+      "key": "BRD-16",
+      "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-16"
+    },
+    {
+      "phase": "PH5",
+      "id": "10020",
+      "key": "BRD-20",
+      "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-20"
+    },
+    {
+      "phase": "POC",
+      "id": "10021",
+      "key": "BRD-21",
+      "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-21"
+    }
+  ],
+  "stories": [
+    {
+      "req": "CON-03",
+      "id": "10004",
+      "key": "BRD-4",
+      "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-4"
+    },
+    {
+      "req": "FR-01",
+      "id": "10006",
+      "key": "BRD-6",
+      "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-6"
+    },
+    {
+      "req": "FR-02",
+      "id": "10007",
+      "key": "BRD-7",
+      "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-7"
+    },
+    {
+      "req": "FR-03",
+      "id": "10008",
+      "key": "BRD-8",
+      "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-8"
+    },
+    {
+      "req": "FR-04",
+      "id": "10009",
+      "key": "BRD-9",
+      "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-9"
+    },
+    {
+      "req": "FR-05",
+      "id": "10010",
+      "key": "BRD-10",
+      "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-10"
+    },
+    {
+      "req": "FR-06",
+      "id": "10011",
+      "key": "BRD-11",
+      "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-11"
+    },
+    {
+      "req": "FR-07",
+      "id": "10012",
+      "key": "BRD-12",
+      "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-12"
+    },
+    {
+      "req": "FR-08",
+      "id": "10013",
+      "key": "BRD-13",
+      "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-13"
+    },
+    {
+      "req": "FR-09",
+      "id": "10014",
+      "key": "BRD-14",
+      "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-14"
+    },
+    {
+      "req": "FR-10",
+      "id": "10015",
+      "key": "BRD-15",
+      "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-15"
+    },
+    {
+      "req": "INT-01",
+      "id": "10017",
+      "key": "BRD-17",
+      "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-17"
+    },
+    {
+      "req": "INT-02",
+      "id": "10018",
+      "key": "BRD-18",
+      "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-18"
+    },
+    {
+      "req": "INT-03",
+      "id": "10019",
+      "key": "BRD-19",
+      "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-19"
+    },
+    {
+      "req": "NFR-01",
+      "id": "10022",
+      "key": "BRD-22",
+      "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-22"
+    },
+    {
+      "req": "NFR-02",
+      "id": "10023",
+      "key": "BRD-23",
+      "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-23"
+    },
+    {
+      "req": "NFR-06",
+      "id": "10024",
+      "key": "BRD-24",
+      "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-24"
+    },
+    {
+      "req": "INT-01",
+      "id": "10025",
+      "key": "BRD-25",
+      "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-25"
+    },
+    {
+      "req": "INT-02",
+      "id": "10026",
+      "key": "BRD-26",
+      "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-26"
+    },
+    {
+      "req": "INT-03",
+      "id": "10027",
+      "key": "BRD-27",
+      "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-27"
+    }
+  ]
+}

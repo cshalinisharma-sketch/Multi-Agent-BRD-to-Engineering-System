@@ -1,0 +1,119 @@
+{
+  "revision_round": 0,
+  "artifact_scores": [
+    {
+      "artifact": "plan_generator",
+      "groundedness_ratio": 0.909,
+      "coverage_ratio": 1.0,
+      "contradictions": 0,
+      "actionability": 5.0,
+      "scores": {
+        "groundedness": 5.0,
+        "completeness": 5.0,
+        "consistency": 5.0,
+        "actionability": 5.0
+      },
+      "overall": 5.0,
+      "below_threshold": [],
+      "badge": "GREEN"
+    },
+    {
+      "artifact": "schedule_estimator",
+      "groundedness_ratio": 1.0,
+      "coverage_ratio": 1.0,
+      "contradictions": 0,
+      "actionability": 5.0,
+      "scores": {
+        "groundedness": 5.0,
+        "completeness": 5.0,
+        "consistency": 5.0,
+        "actionability": 5.0
+      },
+      "overall": 5.0,
+      "below_threshold": [],
+      "badge": "GREEN"
+    },
+    {
+      "artifact": "solution_architect",
+      "groundedness_ratio": 0.895,
+      "coverage_ratio": 1.0,
+      "contradictions": 0,
+      "actionability": 5.0,
+      "scores": {
+        "groundedness": 4.0,
+        "completeness": 5.0,
+        "consistency": 5.0,
+        "actionability": 5.0
+      },
+      "overall": 4.75,
+      "below_threshold": [],
+      "badge": "GREEN"
+    },
+    {
+      "artifact": "poc_planner",
+      "groundedness_ratio": 1.0,
+      "coverage_ratio": 1.0,
+      "contradictions": 0,
+      "actionability": 3.5,
+      "scores": {
+        "groundedness": 5.0,
+        "completeness": 5.0,
+        "consistency": 5.0,
+        "actionability": 3.5
+      },
+      "overall": 4.62,
+      "below_threshold": [
+        "actionability"
+      ],
+      "badge": "AMBER"
+    },
+    {
+      "artifact": "tech_stack_recommender",
+      "groundedness_ratio": 1.0,
+      "coverage_ratio": 1.0,
+      "contradictions": 0,
+      "actionability": 5.0,
+      "scores": {
+        "groundedness": 5.0,
+        "completeness": 5.0,
+        "consistency": 5.0,
+        "actionability": 5.0
+      },
+      "overall": 5.0,
+      "below_threshold": [],
+      "badge": "GREEN"
+    }
+  ],
+  "issues": [
+    {
+      "id": "I001",
+      "code": "unmeasurable_criteria",
+      "dimension": "actionability",
+      "severity": "medium",
+      "target_agent": "poc_planner",
+      "target_items": [
+        "SC-NFR-06"
+      ],
+      "message": "Actionability 3.5/5 (< 4). Gaps: measurable success criteria: 83%; hard gate: unmeasurable PoC success criteria.",
+      "suggested_fix": "Make every listed item measurable (metric, numeric target, method) using org default SLOs where the BRD is vague, and record the assumption."
+    }
+  ],
+  "cross_agent_checks": {
+    "schedule_phases_match_plan": true,
+    "headcount_matches_plan": true,
+    "schedule_matches_architecture_complexity": true,
+    "schedule_not_below_analogs": true,
+    "plan_template_fits_architecture": true,
+    "poc_components_exist_in_architecture": true,
+    "poc_fits_schedule": true,
+    "stack_covers_architecture": true,
+    "stack_familiarity_fits_timeline": true,
+    "stack_respects_deployment": true
+  },
+  "decision": "revise",
+  "agents_to_revise": [
+    "poc_planner"
+  ],
+  "overall_badge": "AMBER",
+  "overall_score": 4.87
+}

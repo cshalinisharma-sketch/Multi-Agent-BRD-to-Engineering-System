@@ -1,0 +1,22 @@
+{
+  "type": "edge: missing NFRs + ambiguity",
+  "expected_status": "completed",
+  "acceptable_patterns": [
+    "search-centric"
+  ],
+  "p50_weeks_range": [
+    10,
+    18
+  ],
+  "required_flag_kinds": [
+    "missing_section",
+    "ambiguity"
+  ],
+  "min_ambiguity_flags": 3,
+  "stack_must_not_be_serverless": false,
+  "stack_must_include": [
+    "OpenSearch"
+  ],
+  "requires_default_slo_assumption": true,
+  "reference_summary": "Plan with discovery, build and launch phases. Search-centric architecture with ingestion connectors for Confluence wiki, ticketing system and SharePoint policy documents, indexing pipeline, search index and permission filtered query API, web frontend and observability. Default service level objectives applied because the BRD has no NFRs. Schedule about 12 to 14 weeks with 5 engineers. PoC on search relevance and latency with permission filtering. Recommended stack: Java or Python service, Amazon OpenSearch, React, PostgreSQL, ECS Fargate, Terraform."
+}

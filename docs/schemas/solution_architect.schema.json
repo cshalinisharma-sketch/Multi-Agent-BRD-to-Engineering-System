@@ -1,0 +1,358 @@
+{
+  "$defs": {
+    "Component": {
+      "properties": {
+        "brd_refs": {
+          "description": "Requirement IDs from the parsed BRD",
+          "items": {
+            "type": "string"
+          },
+          "title": "Brd Refs",
+          "type": "array"
+        },
+        "citations": {
+          "description": "chunk_ids retrieved from the knowledge base",
+          "items": {
+            "type": "string"
+          },
+          "title": "Citations",
+          "type": "array"
+        },
+        "assumption": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Documented assumption when the BRD is silent/ambiguous",
+          "title": "Assumption"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "responsibility": {
+          "title": "Responsibility",
+          "type": "string"
+        },
+        "category": {
+          "enum": [
+            "frontend",
+            "api",
+            "service",
+            "worker",
+            "database",
+            "cache",
+            "messaging",
+            "stream-processing",
+            "search",
+            "integration",
+            "auth",
+            "observability",
+            "storage",
+            "analytics"
+          ],
+          "title": "Category",
+          "type": "string"
+        },
+        "kind": {
+          "default": "feature",
+          "enum": [
+            "feature",
+            "enabler"
+          ],
+          "title": "Kind",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "responsibility",
+        "category"
+      ],
+      "title": "Component",
+      "type": "object"
+    },
+    "DataFlow": {
+      "properties": {
+        "source": {
+          "title": "Source",
+          "type": "string"
+        },
+        "target": {
+          "title": "Target",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "mode": {
+          "enum": [
+            "sync",
+            "async"
+          ],
+          "title": "Mode",
+          "type": "string"
+        }
+      },
+      "required": [
+        "source",
+        "target",
+        "description",
+        "mode"
+      ],
+      "title": "DataFlow",
+      "type": "object"
+    },
+    "Flag": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "ambiguity",
+            "contradiction",
+            "missing_section",
+            "feasibility",
+            "injection",
+            "pii",
+            "scope"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "severity": {
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ],
+          "title": "Severity",
+          "type": "string"
+        },
+        "message": {
+          "title": "Message",
+          "type": "string"
+        },
+        "brd_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Brd Refs",
+          "type": "array"
+        },
+        "resolution": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Conservative default applied, if any",
+          "title": "Resolution"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "severity",
+        "message"
+      ],
+      "title": "Flag",
+      "type": "object"
+    },
+    "NFRMapping": {
+      "properties": {
+        "brd_refs": {
+          "description": "Requirement IDs from the parsed BRD",
+          "items": {
+            "type": "string"
+          },
+          "title": "Brd Refs",
+          "type": "array"
+        },
+        "citations": {
+          "description": "chunk_ids retrieved from the knowledge base",
+          "items": {
+            "type": "string"
+          },
+          "title": "Citations",
+          "type": "array"
+        },
+        "assumption": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Documented assumption when the BRD is silent/ambiguous",
+          "title": "Assumption"
+        },
+        "nfr_id": {
+          "title": "Nfr Id",
+          "type": "string"
+        },
+        "mechanism": {
+          "title": "Mechanism",
+          "type": "string"
+        },
+        "component_ids": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Component Ids",
+          "type": "array"
+        }
+      },
+      "required": [
+        "nfr_id",
+        "mechanism",
+        "component_ids"
+      ],
+      "title": "NFRMapping",
+      "type": "object"
+    },
+    "PatternChoice": {
+      "properties": {
+        "brd_refs": {
+          "description": "Requirement IDs from the parsed BRD",
+          "items": {
+            "type": "string"
+          },
+          "title": "Brd Refs",
+          "type": "array"
+        },
+        "citations": {
+          "description": "chunk_ids retrieved from the knowledge base",
+          "items": {
+            "type": "string"
+          },
+          "title": "Citations",
+          "type": "array"
+        },
+        "assumption": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Documented assumption when the BRD is silent/ambiguous",
+          "title": "Assumption"
+        },
+        "pattern_id": {
+          "title": "Pattern Id",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "rationale": {
+          "title": "Rationale",
+          "type": "string"
+        },
+        "alternatives_considered": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Alternatives Considered",
+          "type": "array"
+        }
+      },
+      "required": [
+        "pattern_id",
+        "name",
+        "rationale",
+        "alternatives_considered"
+      ],
+      "title": "PatternChoice",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "pattern": {
+      "$ref": "#/$defs/PatternChoice"
+    },
+    "components": {
+      "items": {
+        "$ref": "#/$defs/Component"
+      },
+      "minItems": 2,
+      "title": "Components",
+      "type": "array"
+    },
+    "data_flows": {
+      "items": {
+        "$ref": "#/$defs/DataFlow"
+      },
+      "minItems": 1,
+      "title": "Data Flows",
+      "type": "array"
+    },
+    "nfr_mapping": {
+      "items": {
+        "$ref": "#/$defs/NFRMapping"
+      },
+      "title": "Nfr Mapping",
+      "type": "array"
+    },
+    "complexity_score": {
+      "maximum": 5,
+      "minimum": 1,
+      "title": "Complexity Score",
+      "type": "integer"
+    },
+    "mermaid": {
+      "title": "Mermaid",
+      "type": "string"
+    },
+    "assumptions": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Assumptions",
+      "type": "array"
+    },
+    "flags": {
+      "items": {
+        "$ref": "#/$defs/Flag"
+      },
+      "title": "Flags",
+      "type": "array"
+    }
+  },
+  "required": [
+    "pattern",
+    "components",
+    "data_flows",
+    "complexity_score",
+    "mermaid"
+  ],
+  "title": "Architecture",
+  "type": "object"
+}

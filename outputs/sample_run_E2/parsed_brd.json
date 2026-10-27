@@ -1,0 +1,268 @@
+{
+  "brd_id": "BRD-6d8e14e4",
+  "content_hash": "6d8e14e42a8a4d9a5e9b9de1a7869bf14a7b50b1504d09c5ec296e3789f12c35",
+  "title": "Merchant Dispute Resolution Portal",
+  "domain": "fintech",
+  "classification": "confidential",
+  "objectives": [
+    "Reduce average dispute handling time from 11 days to 4 days.",
+    "Reduce disputes lost due to missed deadlines from 18% to under 5%.",
+    "Cut operations analyst effort per dispute by 40%."
+  ],
+  "in_scope": [
+    "Merchant-facing web portal for disputes.",
+    "Operations analyst case-management workspace.",
+    "Integration with the card network dispute APIs (Visa and Mastercard) and the internal payments ledger."
+  ],
+  "out_of_scope": [
+    "Mobile app.",
+    "Automated dispute decisioning using machine learning.",
+    "Consumer (cardholder) facing features."
+  ],
+  "requirements": [
+    {
+      "id": "FR-01",
+      "text": "Merchants sign in and see a list of their open and closed chargebacks with amount, reason code, deadline and status.",
+      "section": "functional_requirements",
+      "category": "functional",
+      "subcategory": "workflow",
+      "priority": "must",
+      "ambiguous_terms": []
+    },
+    {
+      "id": "FR-02",
+      "text": "Merchants upload evidence documents (PDF, JPG, PNG up to 20 MB each) against a chargeback before the network deadline.",
+      "section": "functional_requirements",
+      "category": "functional",
+      "subcategory": "documents",
+      "priority": "must",
+      "ambiguous_terms": []
+    },
+    {
+      "id": "FR-03",
+      "text": "The system submits the evidence package to the card network dispute API and records the submission receipt.",
+      "section": "functional_requirements",
+      "category": "functional",
+      "subcategory": "integration",
+      "priority": "must",
+      "ambiguous_terms": []
+    },
+    {
+      "id": "FR-04",
+      "text": "Chargeback notifications from the card networks are ingested and create or update dispute cases automatically.",
+      "section": "functional_requirements",
+      "category": "functional",
+      "subcategory": "ingestion",
+      "priority": "must",
+      "ambiguous_terms": []
+    },
+    {
+      "id": "FR-05",
+      "text": "Operations analysts work a case queue, assign cases, add internal notes and change case status.",
+      "section": "functional_requirements",
+      "category": "functional",
+      "subcategory": "workflow",
+      "priority": "must",
+      "ambiguous_terms": []
+    },
+    {
+      "id": "FR-06",
+      "text": "Email notifications to merchants when a chargeback is created, 3 days before the evidence deadline, and when an outcome is received.",
+      "section": "functional_requirements",
+      "category": "functional",
+      "subcategory": "notification",
+      "priority": "must",
+      "ambiguous_terms": []
+    },
+    {
+      "id": "FR-07",
+      "text": "Analysts see a dashboard of disputes by status, reason code, win rate and deadline risk.",
+      "section": "functional_requirements",
+      "category": "functional",
+      "subcategory": "reporting",
+      "priority": "should",
+      "ambiguous_terms": []
+    },
+    {
+      "id": "FR-08",
+      "text": "Merchants can accept liability for a chargeback with one click, closing the case.",
+      "section": "functional_requirements",
+      "category": "functional",
+      "subcategory": "workflow",
+      "priority": "should",
+      "ambiguous_terms": []
+    },
+    {
+      "id": "FR-09",
+      "text": "Dispute outcomes (won or lost) are posted to the internal payments ledger to adjust merchant balances.",
+      "section": "functional_requirements",
+      "category": "functional",
+      "subcategory": "integration",
+      "priority": "must",
+      "ambiguous_terms": []
+    },
+    {
+      "id": "FR-10",
+      "text": "Bulk evidence upload for merchants with many disputes.",
+      "section": "functional_requirements",
+      "category": "functional",
+      "subcategory": "documents",
+      "priority": "could",
+      "ambiguous_terms": []
+    },
+    {
+      "id": "NFR-01",
+      "text": "Portal pages load in under 2 seconds at p95 for 500 concurrent merchants.",
+      "section": "non_functional_requirements",
+      "category": "non_functional",
+      "subcategory": "performance",
+      "priority": "must",
+      "ambiguous_terms": []
+    },
+    {
+      "id": "NFR-02",
+      "text": "99.9% monthly availability for the merchant portal.",
+      "section": "non_functional_requirements",
+      "category": "non_functional",
+      "subcategory": "availability",
+      "priority": "must",
+      "ambiguous_terms": []
+    },
+    {
+      "id": "NFR-03",
+      "text": "Merchant SSO via OAuth2; analysts via corporate SSO; role-based access so merchants only see their own disputes.",
+      "section": "non_functional_requirements",
+      "category": "non_functional",
+      "subcategory": "security",
+      "priority": "must",
+      "ambiguous_terms": []
+    },
+    {
+      "id": "NFR-04",
+      "text": "Evidence documents and card data encrypted at rest and in transit; card numbers must never be stored in clear text.",
+      "section": "non_functional_requirements",
+      "category": "non_functional",
+      "subcategory": "security",
+      "priority": "must",
+      "ambiguous_terms": []
+    },
+    {
+      "id": "NFR-05",
+      "text": "Full audit trail of every case action retained for 7 years.",
+      "section": "non_functional_requirements",
+      "category": "non_functional",
+      "subcategory": "compliance",
+      "priority": "must",
+      "ambiguous_terms": []
+    },
+    {
+      "id": "NFR-06",
+      "text": "The system should be easy to use for merchants.",
+      "section": "non_functional_requirements",
+      "category": "non_functional",
+      "subcategory": "usability",
+      "priority": "should",
+      "ambiguous_terms": [
+        "easy",
+        "easy to use"
+      ]
+    },
+    {
+      "id": "INT-01",
+      "text": "Visa and Mastercard dispute APIs (REST, certification required).",
+      "section": "integrations",
+      "category": "integration",
+      "subcategory": "integration",
+      "priority": "must",
+      "ambiguous_terms": []
+    },
+    {
+      "id": "INT-02",
+      "text": "Internal payments ledger API.",
+      "section": "integrations",
+      "category": "integration",
+      "subcategory": "integration",
+      "priority": "must",
+      "ambiguous_terms": []
+    },
+    {
+      "id": "INT-03",
+      "text": "Corporate email service.",
+      "section": "integrations",
+      "category": "integration",
+      "subcategory": "notification",
+      "priority": "must",
+      "ambiguous_terms": []
+    },
+    {
+      "id": "CON-01",
+      "text": "Target go-live within 20 weeks of kickoff.",
+      "section": "constraints",
+      "category": "constraint",
+      "subcategory": "timeline",
+      "priority": "must",
+      "ambiguous_terms": []
+    },
+    {
+      "id": "CON-02",
+      "text": "Team of 7 engineers available.",
+      "section": "constraints",
+      "category": "constraint",
+      "subcategory": "resourcing",
+      "priority": "must",
+      "ambiguous_terms": []
+    },
+    {
+      "id": "CON-03",
+      "text": "Must run on the org AWS platform.",
+      "section": "constraints",
+      "category": "constraint",
+      "subcategory": "resourcing",
+      "priority": "must",
+      "ambiguous_terms": []
+    }
+  ],
+  "constraints": {
+    "deadline_weeks": 20.0,
+    "team_size": 7,
+    "budget": null,
+    "deployment": "aws"
+  },
+  "stakeholders": [
+    "Head of Merchant Operations (sponsor), Merchant Operations analysts, Risk and Compliance, Payments Platform team."
+  ],
+  "success_metrics": [
+    "Average dispute handling time of 4 days or less within 3 months of launch.",
+    "Missed-deadline loss rate under 5%."
+  ],
+  "open_questions": [
+    "Do we need to support Amex disputes in phase 1?"
+  ],
+  "sections_found": [
+    "constraints",
+    "functional_requirements",
+    "in_scope",
+    "integrations",
+    "non_functional_requirements",
+    "objectives",
+    "open_questions",
+    "out_of_scope",
+    "overview",
+    "scope",
+    "stakeholders",
+    "success_metrics"
+  ],
+  "missing_sections": [],
+  "flags": [
+    {
+      "id": "AMB-1",
+      "kind": "ambiguity",
+      "severity": "medium",
+      "message": "NFR-06 uses vague terms ['easy', 'easy to use']; acceptance criteria cannot be derived.",
+      "brd_refs": [
+        "NFR-06"
+      ],
+      "resolution": "Agents must quantify using org defaults and mark as assumption; confirm with product owner."
+    }
+  ]
+}

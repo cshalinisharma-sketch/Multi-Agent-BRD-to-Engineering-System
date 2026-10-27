@@ -1,0 +1,3 @@
+# Dependencies are pinned in pyproject.toml. This installs the project with the
+# OpenAI backend and the test runner (equivalent to: pip install -e ".[openai,dev]").
+-e .[openai,dev]

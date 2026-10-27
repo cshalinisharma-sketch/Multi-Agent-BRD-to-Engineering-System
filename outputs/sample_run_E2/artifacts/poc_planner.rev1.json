@@ -1,0 +1,138 @@
+{
+  "objective": "De-risk Visa and Mastercard dispute APIs Adapter, Internal payments ledger API Adapter, Corporate email service Adapter, Redis Cache before Core Build by proving the riskiest requirements against measurable targets.",
+  "hypotheses": [
+    "Visa and Mastercard dispute APIs Adapter can meet its success criteria without changing the Modular Monolith design",
+    "Internal payments ledger API Adapter can meet its success criteria without changing the Modular Monolith design",
+    "Corporate email service Adapter can meet its success criteria without changing the Modular Monolith design",
+    "Redis Cache can meet its success criteria without changing the Modular Monolith design"
+  ],
+  "in_scope_component_ids": [
+    "C6",
+    "C7",
+    "C8",
+    "C11"
+  ],
+  "out_of_scope": [
+    "production UI polish",
+    "full data migration",
+    "non-critical integrations",
+    "Mobile app.",
+    "Automated dispute decisioning using machine learning.",
+    "Consumer (cardholder) facing features."
+  ],
+  "success_criteria": [
+    {
+      "brd_refs": [
+        "NFR-01"
+      ],
+      "citations": [
+        "tmpl:T2#3"
+      ],
+      "assumption": null,
+      "id": "SC-NFR-01",
+      "metric": "Portal pages load in under 2 seconds at p95 for 500 concurrent\u2026",
+      "target": "under 2 seconds at p95; 500 concurrent merchants",
+      "measurement": "load test with k6 in a production-like environment",
+      "measurable": true
+    },
+    {
+      "brd_refs": [
+        "NFR-02"
+      ],
+      "citations": [
+        "std:STD#5"
+      ],
+      "assumption": null,
+      "id": "SC-NFR-02",
+      "metric": "99.9% monthly availability for the merchant portal.",
+      "target": "99.9%",
+      "measurement": "synthetic probes over a 7-day soak test",
+      "measurable": true
+    },
+    {
+      "brd_refs": [
+        "NFR-06"
+      ],
+      "citations": [
+        "tmpl:T2#9",
+        "tmpl:T2#3"
+      ],
+      "assumption": "quantified from vague BRD wording",
+      "id": "SC-NFR-06",
+      "metric": "primary-flow task success",
+      "target": ">= 90% task completion and median time-on-task <= 3 min with 5 target users",
+      "measurement": "moderated usability test with the product owner",
+      "measurable": true
+    },
+    {
+      "brd_refs": [
+        "INT-01"
+      ],
+      "citations": [
+        "tmpl:T2#9"
+      ],
+      "assumption": null,
+      "id": "SC-INT-01",
+      "metric": "End-to-end round trip with Visa and Mastercard dispute APIs sandbox",
+      "target": ">= 95% of 50 contract-test cases pass; p95 < 1 s",
+      "measurement": "contract tests against the sandbox in CI",
+      "measurable": true
+    },
+    {
+      "brd_refs": [
+        "INT-02"
+      ],
+      "citations": [
+        "tmpl:T2#9"
+      ],
+      "assumption": null,
+      "id": "SC-INT-02",
+      "metric": "End-to-end round trip with Internal payments ledger API sandbox",
+      "target": ">= 95% of 50 contract-test cases pass; p95 < 1 s",
+      "measurement": "contract tests against the sandbox in CI",
+      "measurable": true
+    },
+    {
+      "brd_refs": [
+        "INT-03"
+      ],
+      "citations": [
+        "tmpl:T2#9"
+      ],
+      "assumption": null,
+      "id": "SC-INT-03",
+      "metric": "End-to-end round trip with Corporate email service sandbox",
+      "target": ">= 95% of 50 contract-test cases pass; p95 < 1 s",
+      "measurement": "contract tests against the sandbox in CI",
+      "measurable": true
+    }
+  ],
+  "duration_weeks": 3.0,
+  "modular_boundaries": [
+    "PoC code for Visa and Mastercard dispute APIs Adapter sits behind the production interface so it can be hardened, not rewritten",
+    "PoC code for Internal payments ledger API Adapter sits behind the production interface so it can be hardened, not rewritten",
+    "PoC code for Corporate email service Adapter sits behind the production interface so it can be hardened, not rewritten",
+    "PoC code for Redis Cache sits behind the production interface so it can be hardened, not rewritten",
+    "Throwaway test harness and synthetic data kept outside the main repo"
+  ],
+  "go_no_go": "Go to Core Build if every measurable Must criterion is met; otherwise the Solution Architect revisits the pattern/stack and the EM re-baselines the schedule.",
+  "citations": [
+    "tmpl:T2#3",
+    "tmpl:T2#9"
+  ],
+  "assumptions": [
+    "NFR-06 quantified conservatively as '>= 90% task completion and median time-on-task <= 3 min with 5 target users' (org default/proxy); confirm with product owner."
+  ],
+  "flags": [
+    {
+      "id": "AMB-1",
+      "kind": "ambiguity",
+      "severity": "medium",
+      "message": "NFR-06 uses vague terms ['easy', 'easy to use']; acceptance criteria cannot be derived.",
+      "brd_refs": [
+        "NFR-06"
+      ],
+      "resolution": "Agents must quantify using org defaults and mark as assumption; confirm with product owner."
+    }
+  ]
+}

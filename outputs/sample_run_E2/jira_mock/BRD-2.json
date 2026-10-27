@@ -1,0 +1,26 @@
+{
+  "request": {
+    "fields": {
+      "project": {
+        "key": "BRD"
+      },
+      "issuetype": {
+        "name": "Epic"
+      },
+      "summary": "PH1 Discovery & Design",
+      "description": "Discovery & Design for Merchant Dispute Resolution Portal\nExit criteria: architecture review board sign-off; every Must requirement has acceptance criteria; integration credentials obtained",
+      "labels": [
+        "brd2eng",
+        "BRD-6d8e14e4"
+      ],
+      "priority": {
+        "name": "Medium"
+      }
+    }
+  },
+  "response": {
+    "id": "10002",
+    "key": "BRD-2",
+    "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-2"
+  }
+}

@@ -1,0 +1,15 @@
+decision_id,date,project_id,category,decision,alternatives,rationale,outcome,outcome_rating
+TD-01,2024-02,P-01,backend,Java 21 + Spring Boot modular monolith,Node.js microservices,Team expertise high in Java; transactional approval workflow; single team,Delivered with low defect rate; modules kept clean via ArchUnit tests,5
+TD-02,2024-03,P-01,database,PostgreSQL 16 (Amazon RDS),MongoDB,Relational approval chains and audit queries; org standard,No issues; audit queries performant with proper indexing,5
+TD-03,2025-01,P-02,messaging,Apache Kafka on AWS MSK,Amazon Kinesis; RabbitMQ,3000 events per second with replay and multiple consumers,Met throughput; consumer tuning cost 4 extra weeks due to low team familiarity,3
+TD-04,2025-01,P-02,cache,Redis (ElastiCache) for hot shipment reads,DynamoDB DAX,Sub-second console reads; team familiar,Worked well; p95 read 40ms,5
+TD-05,2025-04,P-07,stream-processing,Apache Flink,Kafka Streams; Spark Structured Streaming,Stateful windowed risk features,Abandoned in week 9: team unfamiliar and ops burden high; replaced by Kafka Streams,1
+TD-06,2025-06,P-07,stream-processing,Kafka Streams,Flink,Library model fits Java team; no separate cluster,Recovered schedule partially; stable in production,4
+TD-07,2024-09,P-05,integration,Card network adapter behind anti-corruption layer,Direct calls from domain code,Isolate certification-specific formats,Certification changes absorbed without domain rework,5
+TD-08,2024-11,P-06,api,AWS API Gateway + BFF for partner and web channels,Single public API,Different auth and payload shapes for partners,Partner onboarding faster; minor latency overhead (15ms),4
+TD-09,2023-05,P-03,backend,Python 3.11 + FastAPI layered app,Django,Small team strong in Python; simple CRUD,Delivered quickly; async endpoints met latency target,5
+TD-10,2025-03,P-11,read-model,OpenSearch read store for dashboards (CQRS),PostgreSQL read replicas,Heavy aggregations would degrade OLTP,Fast dashboards; projection rebuild tooling cost 3 extra weeks,3
+TD-11,2024-07,P-08,orchestration,AWS Step Functions + Glue for nightly sync,Airflow on EKS,Managed service; low ops,Low cost and reliable,4
+TD-12,2025-08,P-12,search,Amazon OpenSearch with document-level security plugin,Elasticsearch self-managed; Pinecone,Org-approved; supports permissions filtering,Permissions mapping took 2 extra weeks; relevance good,4
+TD-13,2025-02,P-09,serverless,AWS Lambda for partner webhooks,ECS services,Spiky low-volume traffic,Cost-efficient; cold starts acceptable for webhooks,4
+TD-14,2025-10,P-05,frontend,React 18 + TypeScript with org design system,Angular,Org standard; shared components,Consistent UX and fast delivery,5

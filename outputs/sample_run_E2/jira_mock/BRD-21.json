@@ -1,0 +1,26 @@
+{
+  "request": {
+    "fields": {
+      "project": {
+        "key": "BRD"
+      },
+      "issuetype": {
+        "name": "Epic"
+      },
+      "summary": "PoC: De-risk Visa and Mastercard dispute APIs Adapter, Internal payments ledger API Adapter, Corporate email service Adapter,",
+      "description": "Go to Core Build if every measurable Must criterion is met; otherwise the Solution Architect revisits the pattern/stack and the EM re-baselines the schedule.",
+      "labels": [
+        "brd2eng",
+        "poc"
+      ],
+      "priority": {
+        "name": "Medium"
+      }
+    }
+  },
+  "response": {
+    "id": "10021",
+    "key": "BRD-21",
+    "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-21"
+  }
+}

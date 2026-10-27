@@ -1,0 +1,21 @@
+{
+  "type": "medium (demo)",
+  "expected_status": "completed",
+  "acceptable_patterns": [
+    "modular-monolith",
+    "layered",
+    "api-gateway-bff"
+  ],
+  "p50_weeks_range": [
+    18,
+    28
+  ],
+  "required_flag_kinds": [
+    "ambiguity"
+  ],
+  "stack_must_not_be_serverless": true,
+  "stack_must_include": [
+    "PostgreSQL"
+  ],
+  "reference_summary": "Five-phase plan: discovery and design, foundation and platform setup, core build, integration and hardening, launch and hypercare. Modular monolith application service with web frontend, document store for evidence, notification worker for email, reporting read model for the dispute dashboard, adapters for Visa and Mastercard dispute APIs, internal payments ledger and corporate email, identity and access with OAuth2 and SSO, PostgreSQL with audit log, Redis cache and observability. Schedule about 20 to 24 weeks with 7 engineers. PoC on the card network dispute API adapter and payments ledger adapter. Recommended stack: Java 21 Spring Boot, React TypeScript, PostgreSQL RDS, Redis, Amazon SQS, Amazon S3, ECS Fargate, Terraform."
+}

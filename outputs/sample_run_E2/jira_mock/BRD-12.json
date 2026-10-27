@@ -1,0 +1,29 @@
+{
+  "request": {
+    "fields": {
+      "project": {
+        "key": "BRD"
+      },
+      "issuetype": {
+        "name": "Story"
+      },
+      "summary": "[FR-07] Analysts see a dashboard of disputes by status, reason code, win\u2026",
+      "description": "Traceability: FR-07",
+      "labels": [
+        "brd2eng",
+        "FR-07"
+      ],
+      "priority": {
+        "name": "Medium"
+      },
+      "parent": {
+        "key": "BRD-5"
+      }
+    }
+  },
+  "response": {
+    "id": "10012",
+    "key": "BRD-12",
+    "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-12"
+  }
+}

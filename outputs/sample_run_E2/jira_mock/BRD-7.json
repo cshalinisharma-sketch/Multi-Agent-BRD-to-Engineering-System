@@ -1,0 +1,29 @@
+{
+  "request": {
+    "fields": {
+      "project": {
+        "key": "BRD"
+      },
+      "issuetype": {
+        "name": "Story"
+      },
+      "summary": "[FR-02] Merchants upload evidence documents (PDF, JPG, PNG up to 20 MB each)\u2026",
+      "description": "Traceability: FR-02",
+      "labels": [
+        "brd2eng",
+        "FR-02"
+      ],
+      "priority": {
+        "name": "High"
+      },
+      "parent": {
+        "key": "BRD-5"
+      }
+    }
+  },
+  "response": {
+    "id": "10007",
+    "key": "BRD-7",
+    "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-7"
+  }
+}

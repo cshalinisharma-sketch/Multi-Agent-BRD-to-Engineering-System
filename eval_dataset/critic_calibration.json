@@ -1,0 +1,99 @@
+{
+  "description": "Reference rubric scores (1-5) for round-0 artifacts of the tuned profile, assigned by a human reviewer reading each artifact against the brief's rubric. Used by run_evals.py to measure Critic agreement (MAE and pass/fail verdict agreement). These were authored by the project builder, not an independent EM: replace them with your own EM ratings before relying on the calibration numbers.",
+  "dimensions": [
+    "groundedness",
+    "completeness",
+    "consistency",
+    "actionability"
+  ],
+  "items": [
+    {
+      "brd": "E2_merchant_dispute_portal",
+      "artifact": "solution_architect",
+      "expert": {
+        "groundedness": 3,
+        "completeness": 5,
+        "consistency": 5,
+        "actionability": 4
+      },
+      "note": "All requirements mapped (FR-04 to the card-network adapter). But several citations are tangential: the web frontend cites the search-centric pattern, the document store cites the serverless pattern; NFR-01 has no source."
+    },
+    {
+      "brd": "E2_merchant_dispute_portal",
+      "artifact": "poc_planner",
+      "expert": {
+        "groundedness": 4,
+        "completeness": 5,
+        "consistency": 5,
+        "actionability": 3
+      },
+      "note": "NFR-06 usability criterion carried through as 'as stated'; contract-test targets are reasonable but not sourced."
+    },
+    {
+      "brd": "E2_merchant_dispute_portal",
+      "artifact": "plan_generator",
+      "expert": {
+        "groundedness": 4,
+        "completeness": 5,
+        "consistency": 5,
+        "actionability": 4
+      },
+      "note": "Template risks partly generic (ERP sandbox risk on a non-ERP project); BRD-specific deliverables not themselves sourced."
+    },
+    {
+      "brd": "E3_realtime_fraud_alerts",
+      "artifact": "plan_generator",
+      "expert": {
+        "groundedness": 4,
+        "completeness": 5,
+        "consistency": 2,
+        "actionability": 4
+      },
+      "note": "Uses the standard T1 template for a streaming platform: no PoC phase despite the PB-002 lesson."
+    },
+    {
+      "brd": "E3_realtime_fraud_alerts",
+      "artifact": "schedule_estimator",
+      "expert": {
+        "groundedness": 5,
+        "completeness": 5,
+        "consistency": 3,
+        "actionability": 4
+      },
+      "note": "Analog-based and well sourced, but estimated at complexity 4 for a complexity-5 architecture."
+    },
+    {
+      "brd": "E3_realtime_fraud_alerts",
+      "artifact": "tech_stack_recommender",
+      "expert": {
+        "groundedness": 5,
+        "completeness": 5,
+        "consistency": 5,
+        "actionability": 5
+      },
+      "note": "Clear trade-offs; correctly rejects Flink on familiarity and TD-05 outcome."
+    },
+    {
+      "brd": "E4_knowledge_search_missing_nfr",
+      "artifact": "schedule_estimator",
+      "expert": {
+        "groundedness": 5,
+        "completeness": 5,
+        "consistency": 3,
+        "actionability": 4
+      },
+      "note": "Complexity basis 2 vs search-centric architecture complexity 4; no deadline in BRD handled well."
+    },
+    {
+      "brd": "E4_knowledge_search_missing_nfr",
+      "artifact": "poc_planner",
+      "expert": {
+        "groundedness": 3,
+        "completeness": 5,
+        "consistency": 5,
+        "actionability": 2
+      },
+      "note": "Two of five criteria (search relevance, the core value) unmeasurable; little sourcing for the search criteria."
+    }
+  ]
+}

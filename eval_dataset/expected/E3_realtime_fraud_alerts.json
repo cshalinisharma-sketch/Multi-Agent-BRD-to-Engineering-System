@@ -1,0 +1,17 @@
+{
+  "type": "complex",
+  "expected_status": "completed",
+  "acceptable_patterns": [
+    "event-driven"
+  ],
+  "p50_weeks_range": [
+    24,
+    42
+  ],
+  "required_flag_kinds": [],
+  "stack_must_not_be_serverless": true,
+  "stack_must_include": [
+    "Kafka"
+  ],
+  "reference_summary": "Six-phase platform plan: discovery and architecture, technical PoC, platform foundation, core build, performance and resilience, rollout and hypercare. Event-driven architecture with ingestion adapters for the authorization switch, event broker, rules and scoring processor calling the fraud model scoring service, case and workflow service for analysts, notification worker for SMS and push, card management adapter, PostgreSQL audit log, Redis cache and observability. Schedule about 30 weeks with 10 engineers. PoC on ingestion, event broker and scoring at 4,000 events per second. Recommended stack: Java Spring Boot, Kafka on AWS MSK, Kafka Streams, PostgreSQL, Redis, React, ECS Fargate, Terraform."
+}

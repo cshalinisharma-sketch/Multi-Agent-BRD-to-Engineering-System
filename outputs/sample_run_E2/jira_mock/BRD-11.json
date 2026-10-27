@@ -1,0 +1,29 @@
+{
+  "request": {
+    "fields": {
+      "project": {
+        "key": "BRD"
+      },
+      "issuetype": {
+        "name": "Story"
+      },
+      "summary": "[FR-06] Email notifications to merchants when a chargeback is created, 3\u2026",
+      "description": "Traceability: FR-06",
+      "labels": [
+        "brd2eng",
+        "FR-06"
+      ],
+      "priority": {
+        "name": "High"
+      },
+      "parent": {
+        "key": "BRD-5"
+      }
+    }
+  },
+  "response": {
+    "id": "10011",
+    "key": "BRD-11",
+    "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-11"
+  }
+}

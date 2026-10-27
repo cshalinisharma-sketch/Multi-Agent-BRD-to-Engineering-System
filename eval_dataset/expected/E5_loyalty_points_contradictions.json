@@ -1,0 +1,21 @@
+{
+  "type": "edge: contradictions + infeasible timeline",
+  "expected_status": "completed",
+  "acceptable_patterns": [
+    "modular-monolith",
+    "event-driven",
+    "api-gateway-bff"
+  ],
+  "p50_weeks_range": [
+    16,
+    36
+  ],
+  "required_flag_kinds": [
+    "contradiction",
+    "feasibility"
+  ],
+  "min_contradictions": 3,
+  "stack_must_not_be_serverless": true,
+  "stack_must_include": [],
+  "reference_summary": "Plan with discovery, foundation, core build, integration and launch; mobile push requirement deferred because the mobile app is out of scope. Modular monolith with web frontend, application service, adapters for point of sale, e-commerce order service and campaign tool, notification worker, PostgreSQL and Redis cache for balance lookups under 200 ms. Contradictions escalated: on-premises versus AWS Lambda, 2 versus 7 year retention, and a 6 week deadline that is infeasible. Schedule far longer than 6 weeks with 4 engineers. Recommended stack: cloud portable containers, Java Spring Boot, PostgreSQL, Redis, Kafka or SQS."
+}

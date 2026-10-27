@@ -1,0 +1,53 @@
+{
+  "properties": {
+    "brd_id": {
+      "title": "Brd Id",
+      "type": "string"
+    },
+    "complexity_estimate": {
+      "maximum": 5,
+      "minimum": 1,
+      "title": "Complexity Estimate",
+      "type": "integer"
+    },
+    "routes": {
+      "additionalProperties": {
+        "items": {
+          "type": "string"
+        },
+        "type": "array"
+      },
+      "description": "agent name -> requirement IDs it must address",
+      "title": "Routes",
+      "type": "object"
+    },
+    "workflows": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Workflows",
+      "type": "array"
+    },
+    "escalations": {
+      "description": "flag IDs raised to the EM before generation",
+      "items": {
+        "type": "string"
+      },
+      "title": "Escalations",
+      "type": "array"
+    },
+    "rationale": {
+      "title": "Rationale",
+      "type": "string"
+    }
+  },
+  "required": [
+    "brd_id",
+    "complexity_estimate",
+    "routes",
+    "workflows",
+    "rationale"
+  ],
+  "title": "RoutingDecision",
+  "type": "object"
+}

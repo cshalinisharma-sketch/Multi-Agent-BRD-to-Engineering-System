@@ -1,0 +1,29 @@
+{
+  "request": {
+    "fields": {
+      "project": {
+        "key": "BRD"
+      },
+      "issuetype": {
+        "name": "Story"
+      },
+      "summary": "[FR-10] Bulk evidence upload for merchants with many disputes.",
+      "description": "Traceability: FR-10",
+      "labels": [
+        "brd2eng",
+        "FR-10"
+      ],
+      "priority": {
+        "name": "Low"
+      },
+      "parent": {
+        "key": "BRD-5"
+      }
+    }
+  },
+  "response": {
+    "id": "10015",
+    "key": "BRD-15",
+    "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-15"
+  }
+}

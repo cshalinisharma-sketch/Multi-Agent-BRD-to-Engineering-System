@@ -1,0 +1,29 @@
+{
+  "request": {
+    "fields": {
+      "project": {
+        "key": "BRD"
+      },
+      "issuetype": {
+        "name": "Story"
+      },
+      "summary": "[PoC] Portal pages load in under 2 seconds at p95 for 500 concurrent\u2026: under 2 seconds at p95; 500 concurrent merchants",
+      "description": "load test with k6 in a production-like environment",
+      "labels": [
+        "poc",
+        "NFR-01"
+      ],
+      "priority": {
+        "name": "Medium"
+      },
+      "parent": {
+        "key": "BRD-21"
+      }
+    }
+  },
+  "response": {
+    "id": "10022",
+    "key": "BRD-22",
+    "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-22"
+  }
+}

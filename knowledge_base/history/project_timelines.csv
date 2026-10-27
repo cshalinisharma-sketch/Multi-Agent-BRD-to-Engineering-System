@@ -1,0 +1,13 @@
+project_id,name,domain,complexity,pattern,req_count,integrations,team_size,planned_weeks,actual_weeks,variance_pct,notes
+P-01,Vendor Invoice Approval,internal-tools,3,modular-monolith,9,1,6,14,16,14,ERP sandbox late; OCR review queue added by change request
+P-02,Real-time Shipment Tracking,logistics,5,event-driven,9,12,9,20,26,30,Carrier API heterogeneity and Kafka learning curve
+P-03,Clinic Appointment Booking,healthcare,2,layered,7,1,4,9,10,11,SMS vendor procurement delay
+P-04,Expense Claims Portal,internal-tools,2,modular-monolith,10,1,4,8,9,12,Smooth delivery on golden-path template
+P-05,Card Chargeback Automation,fintech,4,modular-monolith,15,3,7,16,19,19,Card network sandbox certification took 3 weeks
+P-06,Merchant Onboarding KYC,fintech,4,api-gateway-bff,14,4,7,18,21,17,KYC vendor API rate limits; PII review added 2 weeks
+P-07,Payment Risk Scoring Stream,fintech,5,event-driven,18,3,10,24,31,29,Flink unfamiliar to team; switched to Kafka Streams in week 9
+P-08,Store Inventory Sync,retail,3,batch-etl,8,2,5,10,11,10,Nightly batch acceptable; data-quality checks saved rework
+P-09,Partner Order API,retail,3,api-gateway-bff,11,2,5,12,13,8,Partner OAuth onboarding documented early
+P-10,HR Leave Management,hr,1,layered,6,1,3,6,6,0,Lean MVP template; pilot with one department
+P-11,Customer Support Analytics,internal-tools,4,cqrs,12,2,6,14,17,21,Projection rebuild tooling underestimated
+P-12,Enterprise Document Search,internal-tools,3,search-centric,9,3,5,12,14,17,Document-level permissions harder than expected

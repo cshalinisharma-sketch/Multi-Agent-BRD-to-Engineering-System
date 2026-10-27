@@ -1,0 +1,26 @@
+{
+  "request": {
+    "fields": {
+      "project": {
+        "key": "BRD"
+      },
+      "issuetype": {
+        "name": "Epic"
+      },
+      "summary": "PH5 Launch & Hypercare",
+      "description": "Launch & Hypercare for Merchant Dispute Resolution Portal, delivering 1 mapped requirements\nExit criteria: go-live checklist complete; error budget healthy for 14 days; handover to operations",
+      "labels": [
+        "brd2eng",
+        "BRD-6d8e14e4"
+      ],
+      "priority": {
+        "name": "Medium"
+      }
+    }
+  },
+  "response": {
+    "id": "10020",
+    "key": "BRD-20",
+    "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-20"
+  }
+}

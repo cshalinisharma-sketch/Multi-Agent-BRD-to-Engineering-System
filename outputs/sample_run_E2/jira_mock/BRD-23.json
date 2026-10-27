@@ -1,0 +1,29 @@
+{
+  "request": {
+    "fields": {
+      "project": {
+        "key": "BRD"
+      },
+      "issuetype": {
+        "name": "Story"
+      },
+      "summary": "[PoC] 99.9% monthly availability for the merchant portal.: 99.9%",
+      "description": "synthetic probes over a 7-day soak test",
+      "labels": [
+        "poc",
+        "NFR-02"
+      ],
+      "priority": {
+        "name": "Medium"
+      },
+      "parent": {
+        "key": "BRD-21"
+      }
+    }
+  },
+  "response": {
+    "id": "10023",
+    "key": "BRD-23",
+    "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-23"
+  }
+}

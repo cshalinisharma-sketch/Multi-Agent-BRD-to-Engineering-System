@@ -1,0 +1,29 @@
+{
+  "request": {
+    "fields": {
+      "project": {
+        "key": "BRD"
+      },
+      "issuetype": {
+        "name": "Story"
+      },
+      "summary": "[FR-01] Merchants sign in and see a list of their open and closed\u2026",
+      "description": "Traceability: FR-01",
+      "labels": [
+        "brd2eng",
+        "FR-01"
+      ],
+      "priority": {
+        "name": "High"
+      },
+      "parent": {
+        "key": "BRD-5"
+      }
+    }
+  },
+  "response": {
+    "id": "10006",
+    "key": "BRD-6",
+    "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-6"
+  }
+}

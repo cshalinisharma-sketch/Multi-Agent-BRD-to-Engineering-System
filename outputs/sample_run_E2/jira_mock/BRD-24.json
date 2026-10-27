@@ -1,0 +1,29 @@
+{
+  "request": {
+    "fields": {
+      "project": {
+        "key": "BRD"
+      },
+      "issuetype": {
+        "name": "Story"
+      },
+      "summary": "[PoC] primary-flow task success: >= 90% task completion and median time-on-task <= 3 min with 5 target users",
+      "description": "moderated usability test with the product owner",
+      "labels": [
+        "poc",
+        "NFR-06"
+      ],
+      "priority": {
+        "name": "Medium"
+      },
+      "parent": {
+        "key": "BRD-21"
+      }
+    }
+  },
+  "response": {
+    "id": "10024",
+    "key": "BRD-24",
+    "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-24"
+  }
+}

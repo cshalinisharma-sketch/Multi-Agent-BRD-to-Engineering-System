@@ -1,0 +1,29 @@
+{
+  "request": {
+    "fields": {
+      "project": {
+        "key": "BRD"
+      },
+      "issuetype": {
+        "name": "Story"
+      },
+      "summary": "[FR-03] The system submits the evidence package to the card network dispute\u2026",
+      "description": "Traceability: FR-03",
+      "labels": [
+        "brd2eng",
+        "FR-03"
+      ],
+      "priority": {
+        "name": "High"
+      },
+      "parent": {
+        "key": "BRD-5"
+      }
+    }
+  },
+  "response": {
+    "id": "10008",
+    "key": "BRD-8",
+    "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-8"
+  }
+}

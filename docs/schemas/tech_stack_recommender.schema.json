@@ -1,0 +1,258 @@
+{
+  "$defs": {
+    "Flag": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "ambiguity",
+            "contradiction",
+            "missing_section",
+            "feasibility",
+            "injection",
+            "pii",
+            "scope"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "severity": {
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ],
+          "title": "Severity",
+          "type": "string"
+        },
+        "message": {
+          "title": "Message",
+          "type": "string"
+        },
+        "brd_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Brd Refs",
+          "type": "array"
+        },
+        "resolution": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Conservative default applied, if any",
+          "title": "Resolution"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "severity",
+        "message"
+      ],
+      "title": "Flag",
+      "type": "object"
+    },
+    "StackOption": {
+      "properties": {
+        "brd_refs": {
+          "description": "Requirement IDs from the parsed BRD",
+          "items": {
+            "type": "string"
+          },
+          "title": "Brd Refs",
+          "type": "array"
+        },
+        "citations": {
+          "description": "chunk_ids retrieved from the knowledge base",
+          "items": {
+            "type": "string"
+          },
+          "title": "Citations",
+          "type": "array"
+        },
+        "assumption": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Documented assumption when the BRD is silent/ambiguous",
+          "title": "Assumption"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "components": {
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "component category -> technology",
+          "title": "Components",
+          "type": "object"
+        },
+        "scalability": {
+          "maximum": 5,
+          "minimum": 1,
+          "title": "Scalability",
+          "type": "integer"
+        },
+        "team_familiarity": {
+          "maximum": 5,
+          "minimum": 1,
+          "title": "Team Familiarity",
+          "type": "integer"
+        },
+        "integration_risk": {
+          "description": "5 = highest risk",
+          "maximum": 5,
+          "minimum": 1,
+          "title": "Integration Risk",
+          "type": "integer"
+        },
+        "cost": {
+          "description": "5 = most expensive",
+          "maximum": 5,
+          "minimum": 1,
+          "title": "Cost",
+          "type": "integer"
+        },
+        "weighted_score": {
+          "title": "Weighted Score",
+          "type": "number"
+        },
+        "pros": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Pros",
+          "type": "array"
+        },
+        "cons": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Cons",
+          "type": "array"
+        },
+        "on_approved_list": {
+          "title": "On Approved List",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "components",
+        "scalability",
+        "team_familiarity",
+        "integration_risk",
+        "cost",
+        "weighted_score",
+        "pros",
+        "cons",
+        "on_approved_list"
+      ],
+      "title": "StackOption",
+      "type": "object"
+    },
+    "ToolDecision": {
+      "properties": {
+        "tool": {
+          "title": "Tool",
+          "type": "string"
+        },
+        "reason": {
+          "title": "Reason",
+          "type": "string"
+        },
+        "query": {
+          "title": "Query",
+          "type": "string"
+        }
+      },
+      "required": [
+        "tool",
+        "reason",
+        "query"
+      ],
+      "title": "ToolDecision",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "options": {
+      "items": {
+        "$ref": "#/$defs/StackOption"
+      },
+      "maxItems": 3,
+      "minItems": 2,
+      "title": "Options",
+      "type": "array"
+    },
+    "recommended_option_id": {
+      "title": "Recommended Option Id",
+      "type": "string"
+    },
+    "rationale": {
+      "title": "Rationale",
+      "type": "string"
+    },
+    "weights": {
+      "additionalProperties": {
+        "type": "number"
+      },
+      "title": "Weights",
+      "type": "object"
+    },
+    "tool_decisions": {
+      "items": {
+        "$ref": "#/$defs/ToolDecision"
+      },
+      "title": "Tool Decisions",
+      "type": "array"
+    },
+    "assumptions": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Assumptions",
+      "type": "array"
+    },
+    "flags": {
+      "items": {
+        "$ref": "#/$defs/Flag"
+      },
+      "title": "Flags",
+      "type": "array"
+    }
+  },
+  "required": [
+    "options",
+    "recommended_option_id",
+    "rationale",
+    "weights"
+  ],
+  "title": "TechStackRecommendation",
+  "type": "object"
+}

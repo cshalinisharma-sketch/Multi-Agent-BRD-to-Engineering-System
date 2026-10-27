@@ -1,0 +1,29 @@
+{
+  "request": {
+    "fields": {
+      "project": {
+        "key": "BRD"
+      },
+      "issuetype": {
+        "name": "Story"
+      },
+      "summary": "[INT-01] Visa and Mastercard dispute APIs (REST, certification required).",
+      "description": "Traceability: INT-01",
+      "labels": [
+        "brd2eng",
+        "INT-01"
+      ],
+      "priority": {
+        "name": "High"
+      },
+      "parent": {
+        "key": "BRD-16"
+      }
+    }
+  },
+  "response": {
+    "id": "10017",
+    "key": "BRD-17",
+    "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-17"
+  }
+}

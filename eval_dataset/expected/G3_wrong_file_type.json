@@ -1,0 +1,4 @@
+{
+  "type": "guardrail: wrong file type",
+  "expected_status": "rejected"
+}

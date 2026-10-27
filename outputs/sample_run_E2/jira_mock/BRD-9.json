@@ -1,0 +1,29 @@
+{
+  "request": {
+    "fields": {
+      "project": {
+        "key": "BRD"
+      },
+      "issuetype": {
+        "name": "Story"
+      },
+      "summary": "[FR-04] Chargeback notifications from the card networks are ingested and\u2026",
+      "description": "Traceability: FR-04",
+      "labels": [
+        "brd2eng",
+        "FR-04"
+      ],
+      "priority": {
+        "name": "High"
+      },
+      "parent": {
+        "key": "BRD-5"
+      }
+    }
+  },
+  "response": {
+    "id": "10009",
+    "key": "BRD-9",
+    "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-9"
+  }
+}

@@ -1,0 +1,400 @@
+{
+  "template_used": "T1",
+  "phases": [
+    {
+      "brd_refs": [],
+      "citations": [
+        "tmpl:T1#2"
+      ],
+      "assumption": null,
+      "id": "PH1",
+      "name": "Discovery & Design",
+      "objective": "Discovery & Design for Merchant Dispute Resolution Portal",
+      "effort_share_pct": 15.0,
+      "deliverables": [
+        "refined backlog with acceptance criteria",
+        "architecture decision records",
+        "UX flows",
+        "integration sandbox access confirmed",
+        "clarified acceptance criteria for ambiguous requirements NFR-06"
+      ],
+      "exit_criteria": [
+        "architecture review board sign-off",
+        "every Must requirement has acceptance criteria",
+        "integration credentials obtained"
+      ]
+    },
+    {
+      "brd_refs": [
+        "CON-03"
+      ],
+      "citations": [
+        "tmpl:T1#3"
+      ],
+      "assumption": null,
+      "id": "PH2",
+      "name": "Foundation & Platform Setup",
+      "objective": "Foundation & Platform Setup for Merchant Dispute Resolution Portal, delivering 1 mapped requirements",
+      "effort_share_pct": 15.0,
+      "deliverables": [
+        "repositories",
+        "CI/CD pipeline",
+        "environments (dev/stage/prod)",
+        "IaC",
+        "authentication skeleton",
+        "observability baseline",
+        "CON-03 (constraint): Must run on the org AWS platform."
+      ],
+      "exit_criteria": [
+        "a hello-world service deploys to stage through the pipeline with SSO login and dashboards"
+      ]
+    },
+    {
+      "brd_refs": [
+        "FR-01",
+        "FR-02",
+        "FR-03",
+        "FR-04",
+        "FR-05",
+        "FR-06",
+        "FR-07",
+        "FR-08",
+        "FR-09",
+        "FR-10"
+      ],
+      "citations": [
+        "tmpl:T1#4"
+      ],
+      "assumption": null,
+      "id": "PH3",
+      "name": "Core Build",
+      "objective": "Core Build for Merchant Dispute Resolution Portal, delivering 10 mapped requirements",
+      "effort_share_pct": 40.0,
+      "deliverables": [
+        "Must-have functional requirements implemented behind feature flags with unit and contract tests",
+        "FR-01 (must): Merchants sign in and see a list of their open and closed\u2026",
+        "FR-02 (must): Merchants upload evidence documents (PDF, JPG, PNG up to 20 MB each)\u2026",
+        "FR-03 (must): The system submits the evidence package to the card network dispute\u2026",
+        "FR-04 (must): Chargeback notifications from the card networks are ingested and\u2026",
+        "FR-05 (must): Operations analysts work a case queue, assign cases, add internal\u2026",
+        "FR-06 (must): Email notifications to merchants when a chargeback is created, 3\u2026",
+        "FR-07 (should): Analysts see a dashboard of disputes by status, reason code, win\u2026",
+        "FR-08 (should): Merchants can accept liability for a chargeback with one click,\u2026",
+        "FR-09 (must): Dispute outcomes (won or lost) are posted to the internal payments\u2026",
+        "FR-10 (could): Bulk evidence upload for merchants with many disputes."
+      ],
+      "exit_criteria": [
+        "all Must stories accepted by product owner in stage",
+        "test coverage at least 80% on domain logic",
+        "acceptance tests pass for FR-01, FR-02, FR-03, FR-04, FR-05, FR-06, FR-09"
+      ]
+    },
+    {
+      "brd_refs": [
+        "INT-01",
+        "INT-02",
+        "INT-03"
+      ],
+      "citations": [
+        "tmpl:T1#5"
+      ],
+      "assumption": null,
+      "id": "PH4",
+      "name": "Integration & Hardening",
+      "objective": "Integration & Hardening for Merchant Dispute Resolution Portal, delivering 3 mapped requirements",
+      "effort_share_pct": 20.0,
+      "deliverables": [
+        "end-to-end integration with external systems",
+        "performance and security testing",
+        "NFR verification",
+        "INT-01 (must): Visa and Mastercard dispute APIs (REST, certification required).",
+        "INT-02 (must): Internal payments ledger API.",
+        "INT-03 (must): Corporate email service."
+      ],
+      "exit_criteria": [
+        "NFR targets met in a performance test",
+        "no open critical or high security findings",
+        "UAT sign-off"
+      ]
+    },
+    {
+      "brd_refs": [
+        "CON-01"
+      ],
+      "citations": [
+        "tmpl:T1#6"
+      ],
+      "assumption": null,
+      "id": "PH5",
+      "name": "Launch & Hypercare",
+      "objective": "Launch & Hypercare for Merchant Dispute Resolution Portal, delivering 1 mapped requirements",
+      "effort_share_pct": 10.0,
+      "deliverables": [
+        "production rollout plan",
+        "runbooks",
+        "on-call rota",
+        "two weeks of hypercare"
+      ],
+      "exit_criteria": [
+        "go-live checklist complete",
+        "error budget healthy for 14 days",
+        "handover to operations"
+      ]
+    }
+  ],
+  "milestones": [
+    {
+      "brd_refs": [],
+      "citations": [
+        "tmpl:T1#7"
+      ],
+      "assumption": null,
+      "id": "M1",
+      "name": "Architecture approved",
+      "phase_id": "PH1",
+      "acceptance": "architecture review board sign-off"
+    },
+    {
+      "brd_refs": [
+        "CON-03"
+      ],
+      "citations": [
+        "tmpl:T1#7"
+      ],
+      "assumption": null,
+      "id": "M2",
+      "name": "Walking skeleton in stage",
+      "phase_id": "PH2",
+      "acceptance": "a hello-world service deploys to stage through the pipeline with SSO login and dashboards"
+    },
+    {
+      "brd_refs": [
+        "FR-01",
+        "FR-02",
+        "FR-03",
+        "FR-04"
+      ],
+      "citations": [
+        "tmpl:T1#7"
+      ],
+      "assumption": null,
+      "id": "M3",
+      "name": "Feature complete",
+      "phase_id": "PH3",
+      "acceptance": "all Must stories accepted by product owner in stage"
+    },
+    {
+      "brd_refs": [
+        "INT-01",
+        "INT-02",
+        "INT-03"
+      ],
+      "citations": [
+        "tmpl:T1#7"
+      ],
+      "assumption": null,
+      "id": "M4",
+      "name": "UAT sign-off and NFRs verified",
+      "phase_id": "PH4",
+      "acceptance": "NFR targets met in a performance test"
+    },
+    {
+      "brd_refs": [
+        "CON-01"
+      ],
+      "citations": [
+        "tmpl:T1#7"
+      ],
+      "assumption": null,
+      "id": "M5",
+      "name": "Production go-live",
+      "phase_id": "PH5",
+      "acceptance": "go-live checklist complete"
+    }
+  ],
+  "risks": [
+    {
+      "brd_refs": [],
+      "citations": [
+        "tmpl:T1#8"
+      ],
+      "assumption": null,
+      "id": "R1",
+      "description": "Security review blocks launch",
+      "likelihood": "medium",
+      "impact": "medium",
+      "mitigation": "threat model in Phase 1, SAST/DAST in CI, early AppSec review",
+      "owner_role": "Security Champion"
+    },
+    {
+      "brd_refs": [],
+      "citations": [
+        "tmpl:T1#8"
+      ],
+      "assumption": null,
+      "id": "R2",
+      "description": "Performance NFRs missed late in the project",
+      "likelihood": "medium",
+      "impact": "high",
+      "mitigation": "load-test the walking skeleton in Phase 2 and every sprint thereafter",
+      "owner_role": "Tech Lead"
+    },
+    {
+      "brd_refs": [],
+      "citations": [
+        "tmpl:T1#8"
+      ],
+      "assumption": null,
+      "id": "R3",
+      "description": "Third-party or ERP integration sandbox unavailable or late",
+      "likelihood": "medium",
+      "impact": "medium",
+      "mitigation": "request sandbox in week 1, build contract-test stubs, make integration the first PoC slice",
+      "owner_role": "Engineering Manager"
+    },
+    {
+      "brd_refs": [
+        "INT-01"
+      ],
+      "citations": [
+        "timeline:P-05",
+        "tmpl:T1#2"
+      ],
+      "assumption": null,
+      "id": "R4",
+      "description": "INT-01 Visa and Mastercard dispute APIs (REST, certification\u2026: sandbox access, certification or contract changes delay delivery",
+      "likelihood": "medium",
+      "impact": "high",
+      "mitigation": "Request sandbox/credentials in discovery week 1, build contract-test stubs, isolate behind an adapter (anti-corruption layer), make it a PoC slice",
+      "owner_role": "Tech Lead"
+    },
+    {
+      "brd_refs": [
+        "INT-02"
+      ],
+      "citations": [
+        "tmpl:T1#2",
+        "pbrd:PB-001#4"
+      ],
+      "assumption": null,
+      "id": "R5",
+      "description": "INT-02 Internal payments ledger API.: sandbox access, certification or contract changes delay delivery",
+      "likelihood": "medium",
+      "impact": "high",
+      "mitigation": "Request sandbox/credentials in discovery week 1, build contract-test stubs, isolate behind an adapter (anti-corruption layer), make it a PoC slice",
+      "owner_role": "Tech Lead"
+    },
+    {
+      "brd_refs": [
+        "INT-03"
+      ],
+      "citations": [
+        "tmpl:T1#2",
+        "pbrd:PB-001#4"
+      ],
+      "assumption": null,
+      "id": "R6",
+      "description": "INT-03 Corporate email service.: sandbox access, certification or contract changes delay delivery",
+      "likelihood": "medium",
+      "impact": "high",
+      "mitigation": "Request sandbox/credentials in discovery week 1, build contract-test stubs, isolate behind an adapter (anti-corruption layer), make it a PoC slice",
+      "owner_role": "Tech Lead"
+    },
+    {
+      "brd_refs": [
+        "NFR-06"
+      ],
+      "citations": [
+        "tmpl:T1#8"
+      ],
+      "assumption": null,
+      "id": "R7",
+      "description": "Ambiguous requirement NFR-06 causes rework",
+      "likelihood": "medium",
+      "impact": "medium",
+      "mitigation": "Acceptance criteria agreed with product owner before build; conservative interpretation recorded",
+      "owner_role": "Product Manager"
+    }
+  ],
+  "team": [
+    {
+      "brd_refs": [
+        "CON-02"
+      ],
+      "citations": [
+        "tmpl:T1#2"
+      ],
+      "assumption": null,
+      "role": "Tech Lead",
+      "count": 1,
+      "justification": "owns architecture decisions and integration design"
+    },
+    {
+      "brd_refs": [
+        "CON-02"
+      ],
+      "citations": [],
+      "assumption": null,
+      "role": "Frontend Engineer",
+      "count": 1,
+      "justification": "builds the user-facing UI requirements"
+    },
+    {
+      "brd_refs": [
+        "CON-02"
+      ],
+      "citations": [
+        "tmpl:T1#5"
+      ],
+      "assumption": null,
+      "role": "QA / Test Automation Engineer",
+      "count": 1,
+      "justification": "contract, end-to-end and performance test automation"
+    },
+    {
+      "brd_refs": [
+        "CON-02"
+      ],
+      "citations": [
+        "tmpl:T1#3"
+      ],
+      "assumption": null,
+      "role": "DevOps / SRE Engineer",
+      "count": 1,
+      "justification": "CI/CD, IaC, observability and SLO alerting"
+    },
+    {
+      "brd_refs": [
+        "CON-02"
+      ],
+      "citations": [],
+      "assumption": null,
+      "role": "Backend Engineer",
+      "count": 3,
+      "justification": "domain services and integrations"
+    }
+  ],
+  "assumptions": [],
+  "flags": [
+    {
+      "id": "AMB-1",
+      "kind": "ambiguity",
+      "severity": "medium",
+      "message": "NFR-06 uses vague terms ['easy', 'easy to use']; acceptance criteria cannot be derived.",
+      "brd_refs": [
+        "NFR-06"
+      ],
+      "resolution": "Agents must quantify using org defaults and mark as assumption; confirm with product owner."
+    }
+  ],
+  "reflection": {
+    "checks_run": [
+      "every Must requirement mapped to a phase",
+      "every phase has exit criteria",
+      "every risk has mitigation and owner",
+      "headcount respects BRD team constraint"
+    ],
+    "issues_found": [],
+    "changes_made": []
+  }
+}

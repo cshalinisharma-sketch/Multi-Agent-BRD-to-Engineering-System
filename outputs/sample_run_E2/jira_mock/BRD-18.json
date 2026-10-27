@@ -1,0 +1,29 @@
+{
+  "request": {
+    "fields": {
+      "project": {
+        "key": "BRD"
+      },
+      "issuetype": {
+        "name": "Story"
+      },
+      "summary": "[INT-02] Internal payments ledger API.",
+      "description": "Traceability: INT-02",
+      "labels": [
+        "brd2eng",
+        "INT-02"
+      ],
+      "priority": {
+        "name": "High"
+      },
+      "parent": {
+        "key": "BRD-16"
+      }
+    }
+  },
+  "response": {
+    "id": "10018",
+    "key": "BRD-18",
+    "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-18"
+  }
+}

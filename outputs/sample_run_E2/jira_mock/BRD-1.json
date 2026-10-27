@@ -1,0 +1,26 @@
+{
+  "request": {
+    "fields": {
+      "project": {
+        "key": "BRD"
+      },
+      "issuetype": {
+        "name": "Task"
+      },
+      "summary": "EM decision needed: 1 BRD issue(s) in Merchant Dispute Resolution Portal",
+      "description": "SCH-1 [feasibility/high] p50 estimate 23.5 weeks exceeds the BRD deadline of 20 weeks (p80 28). A Must-only first release is estimated at 19 weeks. Default: Escalated to EM: choose between extending the date, adding capacity, or a Must-only first release; schedule keeps the conservative (longer) estimate.",
+      "labels": [
+        "brd2eng",
+        "escalation"
+      ],
+      "priority": {
+        "name": "High"
+      }
+    }
+  },
+  "response": {
+    "id": "10001",
+    "key": "BRD-1",
+    "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-1"
+  }
+}

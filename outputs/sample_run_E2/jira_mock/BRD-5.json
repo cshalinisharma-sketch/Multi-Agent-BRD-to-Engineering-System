@@ -1,0 +1,26 @@
+{
+  "request": {
+    "fields": {
+      "project": {
+        "key": "BRD"
+      },
+      "issuetype": {
+        "name": "Epic"
+      },
+      "summary": "PH3 Core Build",
+      "description": "Core Build for Merchant Dispute Resolution Portal, delivering 10 mapped requirements\nExit criteria: all Must stories accepted by product owner in stage; test coverage at least 80% on domain logic; acceptance tests pass for FR-01, FR-02, FR-03, FR-04, FR-05, FR-06, FR-09",
+      "labels": [
+        "brd2eng",
+        "BRD-6d8e14e4"
+      ],
+      "priority": {
+        "name": "Medium"
+      }
+    }
+  },
+  "response": {
+    "id": "10005",
+    "key": "BRD-5",
+    "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-5"
+  }
+}

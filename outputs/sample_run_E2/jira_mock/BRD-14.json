@@ -1,0 +1,29 @@
+{
+  "request": {
+    "fields": {
+      "project": {
+        "key": "BRD"
+      },
+      "issuetype": {
+        "name": "Story"
+      },
+      "summary": "[FR-09] Dispute outcomes (won or lost) are posted to the internal payments\u2026",
+      "description": "Traceability: FR-09",
+      "labels": [
+        "brd2eng",
+        "FR-09"
+      ],
+      "priority": {
+        "name": "High"
+      },
+      "parent": {
+        "key": "BRD-5"
+      }
+    }
+  },
+  "response": {
+    "id": "10014",
+    "key": "BRD-14",
+    "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-14"
+  }
+}

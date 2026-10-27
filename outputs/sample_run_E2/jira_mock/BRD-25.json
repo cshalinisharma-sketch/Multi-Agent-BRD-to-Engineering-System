@@ -1,0 +1,29 @@
+{
+  "request": {
+    "fields": {
+      "project": {
+        "key": "BRD"
+      },
+      "issuetype": {
+        "name": "Story"
+      },
+      "summary": "[PoC] End-to-end round trip with Visa and Mastercard dispute APIs sandbox: >= 95% of 50 contract-test cases pass; p95 < 1 s",
+      "description": "contract tests against the sandbox in CI",
+      "labels": [
+        "poc",
+        "INT-01"
+      ],
+      "priority": {
+        "name": "Medium"
+      },
+      "parent": {
+        "key": "BRD-21"
+      }
+    }
+  },
+  "response": {
+    "id": "10025",
+    "key": "BRD-25",
+    "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-25"
+  }
+}

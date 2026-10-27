@@ -1,0 +1,29 @@
+{
+  "request": {
+    "fields": {
+      "project": {
+        "key": "BRD"
+      },
+      "issuetype": {
+        "name": "Story"
+      },
+      "summary": "[FR-08] Merchants can accept liability for a chargeback with one click,\u2026",
+      "description": "Traceability: FR-08",
+      "labels": [
+        "brd2eng",
+        "FR-08"
+      ],
+      "priority": {
+        "name": "Medium"
+      },
+      "parent": {
+        "key": "BRD-5"
+      }
+    }
+  },
+  "response": {
+    "id": "10013",
+    "key": "BRD-13",
+    "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-13"
+  }
+}

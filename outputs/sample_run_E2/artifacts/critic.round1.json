@@ -1,0 +1,102 @@
+{
+  "revision_round": 1,
+  "artifact_scores": [
+    {
+      "artifact": "plan_generator",
+      "groundedness_ratio": 0.909,
+      "coverage_ratio": 1.0,
+      "contradictions": 0,
+      "actionability": 5.0,
+      "scores": {
+        "groundedness": 5.0,
+        "completeness": 5.0,
+        "consistency": 5.0,
+        "actionability": 5.0
+      },
+      "overall": 5.0,
+      "below_threshold": [],
+      "badge": "GREEN"
+    },
+    {
+      "artifact": "schedule_estimator",
+      "groundedness_ratio": 1.0,
+      "coverage_ratio": 1.0,
+      "contradictions": 0,
+      "actionability": 5.0,
+      "scores": {
+        "groundedness": 5.0,
+        "completeness": 5.0,
+        "consistency": 5.0,
+        "actionability": 5.0
+      },
+      "overall": 5.0,
+      "below_threshold": [],
+      "badge": "GREEN"
+    },
+    {
+      "artifact": "solution_architect",
+      "groundedness_ratio": 0.895,
+      "coverage_ratio": 1.0,
+      "contradictions": 0,
+      "actionability": 5.0,
+      "scores": {
+        "groundedness": 4.0,
+        "completeness": 5.0,
+        "consistency": 5.0,
+        "actionability": 5.0
+      },
+      "overall": 4.75,
+      "below_threshold": [],
+      "badge": "GREEN"
+    },
+    {
+      "artifact": "poc_planner",
+      "groundedness_ratio": 1.0,
+      "coverage_ratio": 1.0,
+      "contradictions": 0,
+      "actionability": 5.0,
+      "scores": {
+        "groundedness": 5.0,
+        "completeness": 5.0,
+        "consistency": 5.0,
+        "actionability": 5.0
+      },
+      "overall": 5.0,
+      "below_threshold": [],
+      "badge": "GREEN"
+    },
+    {
+      "artifact": "tech_stack_recommender",
+      "groundedness_ratio": 1.0,
+      "coverage_ratio": 1.0,
+      "contradictions": 0,
+      "actionability": 5.0,
+      "scores": {
+        "groundedness": 5.0,
+        "completeness": 5.0,
+        "consistency": 5.0,
+        "actionability": 5.0
+      },
+      "overall": 5.0,
+      "below_threshold": [],
+      "badge": "GREEN"
+    }
+  ],
+  "issues": [],
+  "cross_agent_checks": {
+    "schedule_phases_match_plan": true,
+    "headcount_matches_plan": true,
+    "schedule_matches_architecture_complexity": true,
+    "schedule_not_below_analogs": true,
+    "plan_template_fits_architecture": true,
+    "poc_components_exist_in_architecture": true,
+    "poc_fits_schedule": true,
+    "stack_covers_architecture": true,
+    "stack_familiarity_fits_timeline": true,
+    "stack_respects_deployment": true
+  },
+  "decision": "pass",
+  "agents_to_revise": [],
+  "overall_badge": "GREEN",
+  "overall_score": 4.95
+}

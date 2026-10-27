@@ -1,0 +1,230 @@
+{
+  "run_id": "demo-20261027-081205-2ed5b3",
+  "source": "E2_merchant_dispute_portal.md",
+  "status": "completed",
+  "provider": "offline",
+  "profile": "tuned",
+  "brd_id": "BRD-6d8e14e4",
+  "title": "Merchant Dispute Resolution Portal",
+  "errors": [],
+  "guardrail_events": [],
+  "escalations": [
+    {
+      "id": "SCH-1",
+      "kind": "feasibility",
+      "severity": "high",
+      "message": "p50 estimate 23.5 weeks exceeds the BRD deadline of 20 weeks (p80 28). A Must-only first release is estimated at 19 weeks.",
+      "brd_refs": [
+        "CON-01"
+      ],
+      "resolution": "Escalated to EM: choose between extending the date, adding capacity, or a Must-only first release; schedule keeps the conservative (longer) estimate."
+    }
+  ],
+  "routing_complexity": 4,
+  "revision_rounds": 1,
+  "final_badge": "GREEN",
+  "final_score": 4.95,
+  "critic_history": [
+    {
+      "round": 0,
+      "overall": 4.87,
+      "badge": "AMBER",
+      "issues": 1,
+      "artifacts": {
+        "plan_generator": {
+          "overall": 5.0,
+          "badge": "GREEN",
+          "groundedness_ratio": 0.909,
+          "coverage_ratio": 1.0,
+          "contradictions": 0,
+          "actionability": 5.0
+        },
+        "schedule_estimator": {
+          "overall": 5.0,
+          "badge": "GREEN",
+          "groundedness_ratio": 1.0,
+          "coverage_ratio": 1.0,
+          "contradictions": 0,
+          "actionability": 5.0
+        },
+        "solution_architect": {
+          "overall": 4.75,
+          "badge": "GREEN",
+          "groundedness_ratio": 0.895,
+          "coverage_ratio": 1.0,
+          "contradictions": 0,
+          "actionability": 5.0
+        },
+        "poc_planner": {
+          "overall": 4.62,
+          "badge": "AMBER",
+          "groundedness_ratio": 1.0,
+          "coverage_ratio": 1.0,
+          "contradictions": 0,
+          "actionability": 3.5
+        },
+        "tech_stack_recommender": {
+          "overall": 5.0,
+          "badge": "GREEN",
+          "groundedness_ratio": 1.0,
+          "coverage_ratio": 1.0,
+          "contradictions": 0,
+          "actionability": 5.0
+        }
+      },
+      "cross_agent_checks": {
+        "schedule_phases_match_plan": true,
+        "headcount_matches_plan": true,
+        "schedule_matches_architecture_complexity": true,
+        "schedule_not_below_analogs": true,
+        "plan_template_fits_architecture": true,
+        "poc_components_exist_in_architecture": true,
+        "poc_fits_schedule": true,
+        "stack_covers_architecture": true,
+        "stack_familiarity_fits_timeline": true,
+        "stack_respects_deployment": true
+      }
+    },
+    {
+      "round": 1,
+      "overall": 4.95,
+      "badge": "GREEN",
+      "issues": 0,
+      "artifacts": {
+        "plan_generator": {
+          "overall": 5.0,
+          "badge": "GREEN",
+          "groundedness_ratio": 0.909,
+          "coverage_ratio": 1.0,
+          "contradictions": 0,
+          "actionability": 5.0
+        },
+        "schedule_estimator": {
+          "overall": 5.0,
+          "badge": "GREEN",
+          "groundedness_ratio": 1.0,
+          "coverage_ratio": 1.0,
+          "contradictions": 0,
+          "actionability": 5.0
+        },
+        "solution_architect": {
+          "overall": 4.75,
+          "badge": "GREEN",
+          "groundedness_ratio": 0.895,
+          "coverage_ratio": 1.0,
+          "contradictions": 0,
+          "actionability": 5.0
+        },
+        "poc_planner": {
+          "overall": 5.0,
+          "badge": "GREEN",
+          "groundedness_ratio": 1.0,
+          "coverage_ratio": 1.0,
+          "contradictions": 0,
+          "actionability": 5.0
+        },
+        "tech_stack_recommender": {
+          "overall": 5.0,
+          "badge": "GREEN",
+          "groundedness_ratio": 1.0,
+          "coverage_ratio": 1.0,
+          "contradictions": 0,
+          "actionability": 5.0
+        }
+      },
+      "cross_agent_checks": {
+        "schedule_phases_match_plan": true,
+        "headcount_matches_plan": true,
+        "schedule_matches_architecture_complexity": true,
+        "schedule_not_below_analogs": true,
+        "plan_template_fits_architecture": true,
+        "poc_components_exist_in_architecture": true,
+        "poc_fits_schedule": true,
+        "stack_covers_architecture": true,
+        "stack_familiarity_fits_timeline": true,
+        "stack_respects_deployment": true
+      }
+    }
+  ],
+  "hitl": {
+    "decision": "approved",
+    "by": "auto (demo mode)",
+    "reason": "GREEN badge"
+  },
+  "exports": {
+    "escalation_ticket": "BRD-1",
+    "markdown": "engineering_pack.md",
+    "pdf": "engineering_pack.pdf",
+    "jira": {
+      "epics": 6,
+      "stories": 20
+    },
+    "html": "dashboard.html"
+  },
+  "metrics": {
+    "agent_executions": 9,
+    "agent_errors": 0,
+    "tool_calls": 28,
+    "tool_call_success_rate": 0.964,
+    "guardrail_triggers": 0,
+    "contract_violations": 0,
+    "by_agent": {
+      "orchestrator": {
+        "executions": 1,
+        "errors": 0,
+        "latency_ms": 0.2,
+        "tokens_in": 1312,
+        "tokens_out": 237,
+        "cost_usd": 0.0
+      },
+      "plan_generator": {
+        "executions": 1,
+        "errors": 0,
+        "latency_ms": 55.7,
+        "tokens_in": 2855,
+        "tokens_out": 2138,
+        "cost_usd": 0.0
+      },
+      "schedule_estimator": {
+        "executions": 1,
+        "errors": 0,
+        "latency_ms": 3.8,
+        "tokens_in": 3876,
+        "tokens_out": 785,
+        "cost_usd": 0.0
+      },
+      "solution_architect": {
+        "executions": 1,
+        "errors": 0,
+        "latency_ms": 84.5,
+        "tokens_in": 3433,
+        "tokens_out": 1906,
+        "cost_usd": 0.0
+      },
+      "poc_planner": {
+        "executions": 2,
+        "errors": 0,
+        "latency_ms": 49.1,
+        "tokens_in": 15665,
+        "tokens_out": 1926,
+        "cost_usd": 0.0
+      },
+      "tech_stack_recommender": {
+        "executions": 1,
+        "errors": 0,
+        "latency_ms": 30.6,
+        "tokens_in": 4948,
+        "tokens_out": 986,
+        "cost_usd": 0.0
+      },
+      "critic": {
+        "executions": 2,
+        "errors": 0,
+        "latency_ms": 240.7,
+        "tokens_in": 0,
+        "tokens_out": 0,
+        "cost_usd": 0.0
+      }
+    }
+  }
+}

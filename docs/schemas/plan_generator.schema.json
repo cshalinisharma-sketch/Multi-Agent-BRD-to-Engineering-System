@@ -1,0 +1,434 @@
+{
+  "$defs": {
+    "Flag": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "ambiguity",
+            "contradiction",
+            "missing_section",
+            "feasibility",
+            "injection",
+            "pii",
+            "scope"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "severity": {
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ],
+          "title": "Severity",
+          "type": "string"
+        },
+        "message": {
+          "title": "Message",
+          "type": "string"
+        },
+        "brd_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Brd Refs",
+          "type": "array"
+        },
+        "resolution": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Conservative default applied, if any",
+          "title": "Resolution"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "severity",
+        "message"
+      ],
+      "title": "Flag",
+      "type": "object"
+    },
+    "Milestone": {
+      "properties": {
+        "brd_refs": {
+          "description": "Requirement IDs from the parsed BRD",
+          "items": {
+            "type": "string"
+          },
+          "title": "Brd Refs",
+          "type": "array"
+        },
+        "citations": {
+          "description": "chunk_ids retrieved from the knowledge base",
+          "items": {
+            "type": "string"
+          },
+          "title": "Citations",
+          "type": "array"
+        },
+        "assumption": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Documented assumption when the BRD is silent/ambiguous",
+          "title": "Assumption"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "phase_id": {
+          "title": "Phase Id",
+          "type": "string"
+        },
+        "acceptance": {
+          "title": "Acceptance",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "phase_id",
+        "acceptance"
+      ],
+      "title": "Milestone",
+      "type": "object"
+    },
+    "Phase": {
+      "properties": {
+        "brd_refs": {
+          "description": "Requirement IDs from the parsed BRD",
+          "items": {
+            "type": "string"
+          },
+          "title": "Brd Refs",
+          "type": "array"
+        },
+        "citations": {
+          "description": "chunk_ids retrieved from the knowledge base",
+          "items": {
+            "type": "string"
+          },
+          "title": "Citations",
+          "type": "array"
+        },
+        "assumption": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Documented assumption when the BRD is silent/ambiguous",
+          "title": "Assumption"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "name": {
+          "title": "Name",
+          "type": "string"
+        },
+        "objective": {
+          "title": "Objective",
+          "type": "string"
+        },
+        "effort_share_pct": {
+          "maximum": 100,
+          "minimum": 0,
+          "title": "Effort Share Pct",
+          "type": "number"
+        },
+        "deliverables": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Deliverables",
+          "type": "array"
+        },
+        "exit_criteria": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Exit Criteria",
+          "type": "array"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "objective",
+        "effort_share_pct",
+        "deliverables",
+        "exit_criteria"
+      ],
+      "title": "Phase",
+      "type": "object"
+    },
+    "Reflection": {
+      "properties": {
+        "checks_run": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Checks Run",
+          "type": "array"
+        },
+        "issues_found": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Issues Found",
+          "type": "array"
+        },
+        "changes_made": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Changes Made",
+          "type": "array"
+        }
+      },
+      "required": [
+        "checks_run",
+        "issues_found",
+        "changes_made"
+      ],
+      "title": "Reflection",
+      "type": "object"
+    },
+    "Risk": {
+      "properties": {
+        "brd_refs": {
+          "description": "Requirement IDs from the parsed BRD",
+          "items": {
+            "type": "string"
+          },
+          "title": "Brd Refs",
+          "type": "array"
+        },
+        "citations": {
+          "description": "chunk_ids retrieved from the knowledge base",
+          "items": {
+            "type": "string"
+          },
+          "title": "Citations",
+          "type": "array"
+        },
+        "assumption": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Documented assumption when the BRD is silent/ambiguous",
+          "title": "Assumption"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "likelihood": {
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ],
+          "title": "Likelihood",
+          "type": "string"
+        },
+        "impact": {
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ],
+          "title": "Impact",
+          "type": "string"
+        },
+        "mitigation": {
+          "title": "Mitigation",
+          "type": "string"
+        },
+        "owner_role": {
+          "title": "Owner Role",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "description",
+        "likelihood",
+        "impact",
+        "mitigation",
+        "owner_role"
+      ],
+      "title": "Risk",
+      "type": "object"
+    },
+    "TeamRole": {
+      "properties": {
+        "brd_refs": {
+          "description": "Requirement IDs from the parsed BRD",
+          "items": {
+            "type": "string"
+          },
+          "title": "Brd Refs",
+          "type": "array"
+        },
+        "citations": {
+          "description": "chunk_ids retrieved from the knowledge base",
+          "items": {
+            "type": "string"
+          },
+          "title": "Citations",
+          "type": "array"
+        },
+        "assumption": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Documented assumption when the BRD is silent/ambiguous",
+          "title": "Assumption"
+        },
+        "role": {
+          "title": "Role",
+          "type": "string"
+        },
+        "count": {
+          "minimum": 1,
+          "title": "Count",
+          "type": "integer"
+        },
+        "justification": {
+          "title": "Justification",
+          "type": "string"
+        }
+      },
+      "required": [
+        "role",
+        "count",
+        "justification"
+      ],
+      "title": "TeamRole",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "template_used": {
+      "title": "Template Used",
+      "type": "string"
+    },
+    "phases": {
+      "items": {
+        "$ref": "#/$defs/Phase"
+      },
+      "minItems": 2,
+      "title": "Phases",
+      "type": "array"
+    },
+    "milestones": {
+      "items": {
+        "$ref": "#/$defs/Milestone"
+      },
+      "minItems": 1,
+      "title": "Milestones",
+      "type": "array"
+    },
+    "risks": {
+      "items": {
+        "$ref": "#/$defs/Risk"
+      },
+      "minItems": 1,
+      "title": "Risks",
+      "type": "array"
+    },
+    "team": {
+      "items": {
+        "$ref": "#/$defs/TeamRole"
+      },
+      "minItems": 1,
+      "title": "Team",
+      "type": "array"
+    },
+    "assumptions": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Assumptions",
+      "type": "array"
+    },
+    "flags": {
+      "items": {
+        "$ref": "#/$defs/Flag"
+      },
+      "title": "Flags",
+      "type": "array"
+    },
+    "reflection": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/Reflection"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    }
+  },
+  "required": [
+    "template_used",
+    "phases",
+    "milestones",
+    "risks",
+    "team"
+  ],
+  "title": "EngineeringPlan",
+  "type": "object"
+}

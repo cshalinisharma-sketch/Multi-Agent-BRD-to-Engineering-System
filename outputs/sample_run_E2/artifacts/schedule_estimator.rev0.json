@@ -1,0 +1,164 @@
+{
+  "phase_estimates": [
+    {
+      "brd_refs": [
+        "CON-02",
+        "CON-03"
+      ],
+      "citations": [
+        "timeline:P-05",
+        "timeline:P-06"
+      ],
+      "assumption": null,
+      "phase_id": "PH1",
+      "effort_person_weeks": 24.6,
+      "duration_weeks": 3.5,
+      "start_week": 0.0,
+      "end_week": 3.5,
+      "roles": [
+        "Tech Lead",
+        "Product Manager"
+      ],
+      "basis": "15% of 164 person-weeks; 8.9 person-weeks per requirement (median of analog projects P-05, P-06, P-11, complexity basis 4) with 7 engineers"
+    },
+    {
+      "brd_refs": [
+        "CON-02",
+        "CON-03"
+      ],
+      "citations": [
+        "timeline:P-05",
+        "timeline:P-06"
+      ],
+      "assumption": null,
+      "phase_id": "PH2",
+      "effort_person_weeks": 24.6,
+      "duration_weeks": 3.5,
+      "start_week": 3.5,
+      "end_week": 7.0,
+      "roles": [
+        "DevOps / SRE Engineer",
+        "Tech Lead",
+        "Backend Engineer"
+      ],
+      "basis": "15% of 164 person-weeks; 8.9 person-weeks per requirement (median of analog projects P-05, P-06, P-11, complexity basis 4) with 7 engineers"
+    },
+    {
+      "brd_refs": [
+        "CON-02",
+        "CON-03"
+      ],
+      "citations": [
+        "timeline:P-05",
+        "timeline:P-06"
+      ],
+      "assumption": null,
+      "phase_id": "PH3",
+      "effort_person_weeks": 65.6,
+      "duration_weeks": 9.5,
+      "start_week": 7.0,
+      "end_week": 16.5,
+      "roles": [
+        "Backend Engineer",
+        "Frontend Engineer",
+        "QA / Test Automation Engineer"
+      ],
+      "basis": "40% of 164 person-weeks; 8.9 person-weeks per requirement (median of analog projects P-05, P-06, P-11, complexity basis 4) with 7 engineers"
+    },
+    {
+      "brd_refs": [
+        "CON-02",
+        "CON-03"
+      ],
+      "citations": [
+        "timeline:P-05",
+        "timeline:P-06"
+      ],
+      "assumption": null,
+      "phase_id": "PH4",
+      "effort_person_weeks": 32.8,
+      "duration_weeks": 4.5,
+      "start_week": 16.5,
+      "end_week": 21.0,
+      "roles": [
+        "QA / Test Automation Engineer",
+        "Backend Engineer",
+        "DevOps / SRE Engineer"
+      ],
+      "basis": "20% of 164 person-weeks; 8.9 person-weeks per requirement (median of analog projects P-05, P-06, P-11, complexity basis 4) with 7 engineers"
+    },
+    {
+      "brd_refs": [
+        "CON-01",
+        "CON-02",
+        "CON-03"
+      ],
+      "citations": [
+        "timeline:P-05",
+        "timeline:P-06"
+      ],
+      "assumption": null,
+      "phase_id": "PH5",
+      "effort_person_weeks": 16.4,
+      "duration_weeks": 2.5,
+      "start_week": 21.0,
+      "end_week": 23.5,
+      "roles": [
+        "DevOps / SRE Engineer",
+        "Tech Lead"
+      ],
+      "basis": "10% of 164 person-weeks; 8.9 person-weeks per requirement (median of analog projects P-05, P-06, P-11, complexity basis 4) with 7 engineers"
+    }
+  ],
+  "total_duration_weeks": 23.5,
+  "p80_duration_weeks": 28.0,
+  "total_effort_person_weeks": 164.0,
+  "headcount": 7,
+  "complexity_basis": 4,
+  "analogs": [
+    {
+      "project_id": "P-05",
+      "chunk_id": "timeline:P-05",
+      "complexity": 4,
+      "actual_weeks": 19.0,
+      "team_size": 7,
+      "variance_pct": 19.0,
+      "req_count": 15
+    },
+    {
+      "project_id": "P-06",
+      "chunk_id": "timeline:P-06",
+      "complexity": 4,
+      "actual_weeks": 21.0,
+      "team_size": 7,
+      "variance_pct": 17.0,
+      "req_count": 14
+    },
+    {
+      "project_id": "P-11",
+      "chunk_id": "timeline:P-11",
+      "complexity": 4,
+      "actual_weeks": 17.0,
+      "team_size": 6,
+      "variance_pct": 21.0,
+      "req_count": 12
+    }
+  ],
+  "deadline_weeks": 20.0,
+  "fits_deadline": false,
+  "assumptions": [
+    "Phases are sequential; parallelising Foundation with late Discovery can save ~1-2 weeks."
+  ],
+  "flags": [
+    {
+      "id": "SCH-1",
+      "kind": "feasibility",
+      "severity": "high",
+      "message": "p50 estimate 23.5 weeks exceeds the BRD deadline of 20 weeks (p80 28). A Must-only first release is estimated at 19 weeks.",
+      "brd_refs": [
+        "CON-01"
+      ],
+      "resolution": "Escalated to EM: choose between extending the date, adding capacity, or a Must-only first release; schedule keeps the conservative (longer) estimate."
+    }
+  ]
+}

@@ -1,0 +1,204 @@
+{
+  "$defs": {
+    "ArtifactScore": {
+      "properties": {
+        "artifact": {
+          "title": "Artifact",
+          "type": "string"
+        },
+        "groundedness_ratio": {
+          "title": "Groundedness Ratio",
+          "type": "number"
+        },
+        "coverage_ratio": {
+          "title": "Coverage Ratio",
+          "type": "number"
+        },
+        "contradictions": {
+          "title": "Contradictions",
+          "type": "integer"
+        },
+        "actionability": {
+          "title": "Actionability",
+          "type": "number"
+        },
+        "scores": {
+          "additionalProperties": {
+            "type": "number"
+          },
+          "title": "Scores",
+          "type": "object"
+        },
+        "overall": {
+          "title": "Overall",
+          "type": "number"
+        },
+        "below_threshold": {
+          "items": {
+            "enum": [
+              "groundedness",
+              "completeness",
+              "consistency",
+              "actionability"
+            ],
+            "type": "string"
+          },
+          "title": "Below Threshold",
+          "type": "array"
+        },
+        "badge": {
+          "enum": [
+            "GREEN",
+            "AMBER",
+            "RED"
+          ],
+          "title": "Badge",
+          "type": "string"
+        }
+      },
+      "required": [
+        "artifact",
+        "groundedness_ratio",
+        "coverage_ratio",
+        "contradictions",
+        "actionability",
+        "scores",
+        "overall",
+        "below_threshold",
+        "badge"
+      ],
+      "title": "ArtifactScore",
+      "type": "object"
+    },
+    "CriticIssue": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "code": {
+          "description": "machine-readable issue type, e.g. uncovered_requirements, uncited_claims",
+          "title": "Code",
+          "type": "string"
+        },
+        "dimension": {
+          "enum": [
+            "groundedness",
+            "completeness",
+            "consistency",
+            "actionability"
+          ],
+          "title": "Dimension",
+          "type": "string"
+        },
+        "severity": {
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ],
+          "title": "Severity",
+          "type": "string"
+        },
+        "target_agent": {
+          "title": "Target Agent",
+          "type": "string"
+        },
+        "target_items": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Target Items",
+          "type": "array"
+        },
+        "message": {
+          "title": "Message",
+          "type": "string"
+        },
+        "suggested_fix": {
+          "title": "Suggested Fix",
+          "type": "string"
+        }
+      },
+      "required": [
+        "id",
+        "code",
+        "dimension",
+        "severity",
+        "target_agent",
+        "message",
+        "suggested_fix"
+      ],
+      "title": "CriticIssue",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "revision_round": {
+      "title": "Revision Round",
+      "type": "integer"
+    },
+    "artifact_scores": {
+      "items": {
+        "$ref": "#/$defs/ArtifactScore"
+      },
+      "title": "Artifact Scores",
+      "type": "array"
+    },
+    "issues": {
+      "items": {
+        "$ref": "#/$defs/CriticIssue"
+      },
+      "title": "Issues",
+      "type": "array"
+    },
+    "cross_agent_checks": {
+      "additionalProperties": {
+        "type": "boolean"
+      },
+      "title": "Cross Agent Checks",
+      "type": "object"
+    },
+    "decision": {
+      "enum": [
+        "pass",
+        "revise",
+        "escalate"
+      ],
+      "title": "Decision",
+      "type": "string"
+    },
+    "agents_to_revise": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Agents To Revise",
+      "type": "array"
+    },
+    "overall_badge": {
+      "enum": [
+        "GREEN",
+        "AMBER",
+        "RED"
+      ],
+      "title": "Overall Badge",
+      "type": "string"
+    },
+    "overall_score": {
+      "title": "Overall Score",
+      "type": "number"
+    }
+  },
+  "required": [
+    "revision_round",
+    "artifact_scores",
+    "issues",
+    "cross_agent_checks",
+    "decision",
+    "agents_to_revise",
+    "overall_badge",
+    "overall_score"
+  ],
+  "title": "CriticReport",
+  "type": "object"
+}

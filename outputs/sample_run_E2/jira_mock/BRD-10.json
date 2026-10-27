@@ -1,0 +1,29 @@
+{
+  "request": {
+    "fields": {
+      "project": {
+        "key": "BRD"
+      },
+      "issuetype": {
+        "name": "Story"
+      },
+      "summary": "[FR-05] Operations analysts work a case queue, assign cases, add internal\u2026",
+      "description": "Traceability: FR-05",
+      "labels": [
+        "brd2eng",
+        "FR-05"
+      ],
+      "priority": {
+        "name": "High"
+      },
+      "parent": {
+        "key": "BRD-5"
+      }
+    }
+  },
+  "response": {
+    "id": "10010",
+    "key": "BRD-10",
+    "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-10"
+  }
+}

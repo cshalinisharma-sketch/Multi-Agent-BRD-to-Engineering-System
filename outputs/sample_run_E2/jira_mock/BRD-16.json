@@ -1,0 +1,26 @@
+{
+  "request": {
+    "fields": {
+      "project": {
+        "key": "BRD"
+      },
+      "issuetype": {
+        "name": "Epic"
+      },
+      "summary": "PH4 Integration & Hardening",
+      "description": "Integration & Hardening for Merchant Dispute Resolution Portal, delivering 3 mapped requirements\nExit criteria: NFR targets met in a performance test; no open critical or high security findings; UAT sign-off",
+      "labels": [
+        "brd2eng",
+        "BRD-6d8e14e4"
+      ],
+      "priority": {
+        "name": "Medium"
+      }
+    }
+  },
+  "response": {
+    "id": "10016",
+    "key": "BRD-16",
+    "self": "https://mock.atlassian.net/rest/api/3/issue/BRD-16"
+  }
+}

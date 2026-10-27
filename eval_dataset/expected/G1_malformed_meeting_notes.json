@@ -1,0 +1,4 @@
+{
+  "type": "guardrail: malformed input",
+  "expected_status": "rejected"
+}

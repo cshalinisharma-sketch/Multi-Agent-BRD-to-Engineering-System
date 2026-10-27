@@ -1,0 +1,213 @@
+{
+  "$defs": {
+    "Flag": {
+      "properties": {
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "kind": {
+          "enum": [
+            "ambiguity",
+            "contradiction",
+            "missing_section",
+            "feasibility",
+            "injection",
+            "pii",
+            "scope"
+          ],
+          "title": "Kind",
+          "type": "string"
+        },
+        "severity": {
+          "enum": [
+            "low",
+            "medium",
+            "high"
+          ],
+          "title": "Severity",
+          "type": "string"
+        },
+        "message": {
+          "title": "Message",
+          "type": "string"
+        },
+        "brd_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Brd Refs",
+          "type": "array"
+        },
+        "resolution": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Conservative default applied, if any",
+          "title": "Resolution"
+        }
+      },
+      "required": [
+        "id",
+        "kind",
+        "severity",
+        "message"
+      ],
+      "title": "Flag",
+      "type": "object"
+    },
+    "SuccessCriterion": {
+      "properties": {
+        "brd_refs": {
+          "description": "Requirement IDs from the parsed BRD",
+          "items": {
+            "type": "string"
+          },
+          "title": "Brd Refs",
+          "type": "array"
+        },
+        "citations": {
+          "description": "chunk_ids retrieved from the knowledge base",
+          "items": {
+            "type": "string"
+          },
+          "title": "Citations",
+          "type": "array"
+        },
+        "assumption": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "description": "Documented assumption when the BRD is silent/ambiguous",
+          "title": "Assumption"
+        },
+        "id": {
+          "title": "Id",
+          "type": "string"
+        },
+        "metric": {
+          "title": "Metric",
+          "type": "string"
+        },
+        "target": {
+          "title": "Target",
+          "type": "string"
+        },
+        "measurement": {
+          "title": "Measurement",
+          "type": "string"
+        },
+        "measurable": {
+          "title": "Measurable",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "id",
+        "metric",
+        "target",
+        "measurement",
+        "measurable"
+      ],
+      "title": "SuccessCriterion",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "objective": {
+      "title": "Objective",
+      "type": "string"
+    },
+    "hypotheses": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Hypotheses",
+      "type": "array"
+    },
+    "in_scope_component_ids": {
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "In Scope Component Ids",
+      "type": "array"
+    },
+    "out_of_scope": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Out Of Scope",
+      "type": "array"
+    },
+    "success_criteria": {
+      "items": {
+        "$ref": "#/$defs/SuccessCriterion"
+      },
+      "minItems": 1,
+      "title": "Success Criteria",
+      "type": "array"
+    },
+    "duration_weeks": {
+      "exclusiveMinimum": 0,
+      "maximum": 8,
+      "title": "Duration Weeks",
+      "type": "number"
+    },
+    "modular_boundaries": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Modular Boundaries",
+      "type": "array"
+    },
+    "go_no_go": {
+      "title": "Go No Go",
+      "type": "string"
+    },
+    "citations": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Citations",
+      "type": "array"
+    },
+    "assumptions": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Assumptions",
+      "type": "array"
+    },
+    "flags": {
+      "items": {
+        "$ref": "#/$defs/Flag"
+      },
+      "title": "Flags",
+      "type": "array"
+    }
+  },
+  "required": [
+    "objective",
+    "hypotheses",
+    "in_scope_component_ids",
+    "success_criteria",
+    "duration_weeks",
+    "go_no_go"
+  ],
+  "title": "PoCPlan",
+  "type": "object"
+}

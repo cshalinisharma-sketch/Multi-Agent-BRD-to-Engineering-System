@@ -1,0 +1,191 @@
+{
+  "options": [
+    {
+      "brd_refs": [
+        "NFR-01",
+        "NFR-02",
+        "NFR-03",
+        "NFR-04",
+        "NFR-05",
+        "NFR-06",
+        "INT-01",
+        "INT-02",
+        "INT-03"
+      ],
+      "citations": [
+        "std:STD#1",
+        "std:STD#2",
+        "decision:TD-14"
+      ],
+      "assumption": null,
+      "id": "OPT-A",
+      "name": "Org golden path (containers + managed AWS data services)",
+      "components": {
+        "backend": "Java 21 + Spring Boot 3",
+        "frontend": "React 18 + TypeScript",
+        "database": "PostgreSQL 16 (RDS)",
+        "runtime": "ECS Fargate",
+        "iac": "Terraform",
+        "cache": "Redis (ElastiCache)",
+        "messaging": "Amazon SQS/SNS",
+        "storage": "Amazon S3"
+      },
+      "scalability": 4,
+      "team_familiarity": 5,
+      "integration_risk": 2,
+      "cost": 3,
+      "weighted_score": 4.15,
+      "pros": [
+        "high team familiarity (avg 4.4/5 on the org matrix)",
+        "entirely on the org approved list; no ARB exception needed",
+        "comfortable headroom for growth"
+      ],
+      "cons": [
+        "standard operational overhead of containers"
+      ],
+      "on_approved_list": true
+    },
+    {
+      "brd_refs": [
+        "NFR-01",
+        "NFR-02",
+        "NFR-03",
+        "NFR-04",
+        "NFR-05",
+        "NFR-06",
+        "INT-01",
+        "INT-02",
+        "INT-03"
+      ],
+      "citations": [
+        "std:STD#1",
+        "decision:TD-13",
+        "decision:TD-02"
+      ],
+      "assumption": null,
+      "id": "OPT-B",
+      "name": "Serverless-first (Lambda + managed services)",
+      "components": {
+        "backend": "AWS Lambda + API Gateway",
+        "frontend": "React 18 + TypeScript",
+        "database": "Amazon DynamoDB",
+        "runtime": "AWS Lambda + API Gateway",
+        "iac": "Terraform",
+        "cache": "Redis (ElastiCache)",
+        "messaging": "Amazon SQS/SNS",
+        "storage": "Amazon S3"
+      },
+      "scalability": 4,
+      "team_familiarity": 3,
+      "integration_risk": 3,
+      "cost": 2,
+      "weighted_score": 3.4,
+      "pros": [
+        "entirely on the org approved list; no ARB exception needed",
+        "comfortable headroom for growth",
+        "pay-per-use cost at low steady volume"
+      ],
+      "cons": [
+        "key-value store is a poor fit for relational audit/reporting queries (org default is PostgreSQL)",
+        "low team familiarity with Amazon DynamoDB (matrix <= 2)",
+        "cold starts and vendor lock-in; harder local testing"
+      ],
+      "on_approved_list": true
+    },
+    {
+      "brd_refs": [
+        "NFR-01",
+        "NFR-02",
+        "NFR-03",
+        "NFR-04",
+        "NFR-05",
+        "NFR-06",
+        "INT-01",
+        "INT-02",
+        "INT-03"
+      ],
+      "citations": [
+        "std:STD#2",
+        "std:STD#1"
+      ],
+      "assumption": null,
+      "id": "OPT-C",
+      "name": "Python lean stack",
+      "components": {
+        "backend": "Python 3.12 + FastAPI",
+        "frontend": "React 18 + TypeScript",
+        "database": "PostgreSQL 16 (RDS)",
+        "runtime": "ECS Fargate",
+        "iac": "Terraform",
+        "cache": "Redis (ElastiCache)",
+        "messaging": "Amazon SQS/SNS",
+        "storage": "Amazon S3"
+      },
+      "scalability": 3,
+      "team_familiarity": 4,
+      "integration_risk": 2,
+      "cost": 3,
+      "weighted_score": 3.6,
+      "pros": [
+        "high team familiarity (avg 4.3/5 on the org matrix)",
+        "entirely on the org approved list; no ARB exception needed"
+      ],
+      "cons": [
+        "least headroom if volume grows beyond the BRD"
+      ],
+      "on_approved_list": true
+    }
+  ],
+  "recommended_option_id": "OPT-A",
+  "rationale": "Org golden path (containers + managed AWS data services) has the best weighted score (4.15) with weights {'scalability': 0.2, 'team_familiarity': 0.35, 'integration_risk': 0.25, 'cost': 0.2}: scalability 4/5, familiarity 5/5, integration risk 2/5, cost 3/5.",
+  "weights": {
+    "scalability": 0.2,
+    "team_familiarity": 0.35,
+    "integration_risk": 0.25,
+    "cost": 0.2
+  },
+  "tool_decisions": [
+    {
+      "tool": "standards_lookup",
+      "reason": "approved stack and team familiarity matrix are always required",
+      "query": "approved technology stack team familiarity matrix scores"
+    },
+    {
+      "tool": "decision_log_lookup",
+      "reason": "architecture has a analytics component",
+      "query": "read-model decision outcome"
+    },
+    {
+      "tool": "decision_log_lookup",
+      "reason": "architecture has a cache component",
+      "query": "cache decision outcome"
+    },
+    {
+      "tool": "decision_log_lookup",
+      "reason": "architecture has a database component",
+      "query": "database decision outcome"
+    },
+    {
+      "tool": "decision_log_lookup",
+      "reason": "architecture has a frontend component",
+      "query": "frontend decision outcome"
+    },
+    {
+      "tool": "decision_log_lookup",
+      "reason": "architecture has a integration component",
+      "query": "integration decision outcome"
+    },
+    {
+      "tool": "decision_log_lookup",
+      "reason": "architecture has a service component",
+      "query": "backend decision outcome"
+    },
+    {
+      "tool": "decision_log_lookup",
+      "reason": "architecture has a worker component",
+      "query": "serverless decision outcome"
+    }
+  ],
+  "assumptions": [],
+  "flags": []
+}

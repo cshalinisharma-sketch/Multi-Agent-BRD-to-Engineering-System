@@ -1,0 +1,76 @@
+{
+  "brd_id": "BRD-6d8e14e4",
+  "complexity_estimate": 4,
+  "routes": {
+    "plan_generator": [
+      "FR-01",
+      "FR-02",
+      "FR-03",
+      "FR-04",
+      "FR-05",
+      "FR-06",
+      "FR-07",
+      "FR-08",
+      "FR-09",
+      "FR-10",
+      "INT-01",
+      "INT-02",
+      "INT-03",
+      "CON-01",
+      "CON-02",
+      "CON-03"
+    ],
+    "schedule_estimator": [
+      "CON-01",
+      "CON-02",
+      "CON-03"
+    ],
+    "solution_architect": [
+      "FR-01",
+      "FR-02",
+      "FR-03",
+      "FR-04",
+      "FR-05",
+      "FR-06",
+      "FR-07",
+      "FR-08",
+      "FR-09",
+      "FR-10",
+      "NFR-01",
+      "NFR-02",
+      "NFR-03",
+      "NFR-04",
+      "NFR-05",
+      "NFR-06",
+      "INT-01",
+      "INT-02",
+      "INT-03"
+    ],
+    "poc_planner": [
+      "NFR-01",
+      "NFR-02",
+      "NFR-06",
+      "INT-01",
+      "INT-02",
+      "INT-03"
+    ],
+    "tech_stack_recommender": [
+      "NFR-01",
+      "NFR-02",
+      "NFR-03",
+      "NFR-04",
+      "NFR-05",
+      "NFR-06",
+      "INT-01",
+      "INT-02",
+      "INT-03"
+    ]
+  },
+  "workflows": [
+    "planning",
+    "design",
+    "validation"
+  ],
+  "escalations": [],
+  "rationale": "16 functional/NFR requirements and 3 integrations -> initial complexity 4. Planning group gets functional/integration/constraint requirements; Design group gets functional/NFR/integration; PoC gets integrations, critical NFRs and ambiguous Musts."
+}
