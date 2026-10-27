@@ -4,9 +4,7 @@
 
 Applied Agentic AI for Engineering Managers turns a raw Business Requirements Document (BRD) into a decision-ready **engineering pack** — plan, schedule, architecture, PoC scope and tech-stack options — grounded in organisational knowledge (RAG), checked by a Critic with a bounded revision loop, badged GREEN / AMBER / RED, and gated by the Engineering Manager (EM) before anything is exported.
 
-Built with **Python + LangGraph** (orchestration graph, Critic loop, human-in-the-loop interrupt) and **LangChain** chat models (`ChatOpenAI` / `ChatAnthropic`). Runs **fully offline** by default; OpenAI or Anthropic is opt-in.
-
-> **Safety boundary:** use synthetic or anonymised BRDs. The default provider is deterministic and offline. An online provider receives (PII-redacted) BRD text, so it only runs after you explicitly confirm the endpoint is approved for the data (`--allow-external` / `BRD2ENG_ALLOW_EXTERNAL_CONTENT=1`). Never commit API keys, real BRDs or generated `outputs/`. Results on the small synthetic eval set are not evidence of production readiness.
+Built with **Python + LangGraph** (orchestration graph, Critic loop, human-in-the-loop interrupt) and **LangChain** chat models (`ChatOpenAI`). Runs **fully offline** by default; OpenAI or Anthropic is opt-in.
 
 ## Quick start
 
