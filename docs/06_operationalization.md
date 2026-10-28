@@ -69,7 +69,7 @@ A change to prompts, models, knowledge base, thresholds or code ships only if:
 
 The per-run HTML dashboard (`dashboard.html`) shows badges, score per revision, cross-agent checks, Critic feedback by round, guardrail events and per-agent cost/latency for the EM.
 
-## 6.6 Productionization plan (capstone week 2)
+## 6.6 Productionization plan 
 
 **Data strategy**
 
