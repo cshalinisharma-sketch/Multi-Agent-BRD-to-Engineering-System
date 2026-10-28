@@ -2,7 +2,7 @@
 
 Business owner: HR Operations Lead
 
-## Overview
+##  Overview
 HR tracks leave requests in a shared spreadsheet. Managers miss requests and balances are often wrong. We need a simple internal tool for submitting and approving leave.
 
 ## Business Objectives
