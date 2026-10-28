@@ -2,7 +2,7 @@
 
 All numbers below come from `python run_evals.py` (full generated tables: `eval_results/eval_report.md`; raw data: `eval_results/results_{baseline,tuned}.json`). Runs are deterministic in offline mode, so anyone can reproduce them exactly.
 
-> **Read this first — what offline mode means for these numbers.** No LLM API key was available in the build environment, so every agent ran its deterministic heuristic generator, and the "LLM-as-Judge" ran as a transparent heuristic proxy (labelled `judge_mode: heuristic-proxy`). The pipeline, Critic, guardrails, rule-based, execution-based and reference-based evals are fully real. Re-run `run_evals.py` with `ANTHROPIC_API_KEY` or `OPENAI_API_KEY` set to get true LLM generation and LLM judging; the harness, thresholds and tables stay the same. The online path (retry on malformed JSON → re-prompt on schema violation → heuristic fallback) is covered by `tests/test_pipeline.py::test_llm_retry_then_fallback` with a mocked provider.
+> **Read this first — what offline mode means for these numbers.** No LLM API key was available in the build environment, so every agent ran its deterministic heuristic generator, and the "LLM-as-Judge" ran as a transparent heuristic proxy (labelled `judge_mode: heuristic-proxy`). The pipeline, Critic, guardrails, rule-based, execution-based and reference-based evals are fully real. Re-run `run_evals.py` with `OPENAI_API_KEY` set to get true LLM generation and LLM judging; the harness, thresholds and tables stay the same. The online path (retry on malformed JSON → re-prompt on schema violation → heuristic fallback) is covered by `tests/test_pipeline.py::test_llm_retry_then_fallback` with a mocked provider.
 
 ## 4.1 Eval dataset (`eval_dataset/`)
 
@@ -114,4 +114,4 @@ The rule-based pass rate does not move with retrieval because its round-0 failur
 2. In offline mode the Critic's actionability heuristic and the judge proxy share logic, so the judge is not independent of the Critic. With an API key the judge is a separate LLM call with its own rubric.
 3. Citation attachment is similarity-based: "claims cited" overstates grounding quality when a chunk is only tangentially related (see §4.6). The grounding-quality judge (4.4–4.8) is the better signal for this.
 4. ROUGE-L (0.34–0.64) is a coarse signal: the references are paraphrased prose, so lexical overlap understates agreement on decisions; the expected-outcome checks are the sharper test of decision quality.
-5. The eval set is 8 BRDs; the brief's 3–5 + edge cases is met, but a production rollout should grow it with real (sanitised) BRDs and EM ratings from the HITL gate.
+5. The eval set is 8 BRDs; the brief's 3–5 + edge cases is met, but a production rollout should grow it with real  BRDs and EM ratings from the HITL gate.
