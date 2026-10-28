@@ -1,4 +1,4 @@
-"""Evaluation methods.
+""""Evaluation methods.
 
 1. Rule-based      – structural/schema checks, BRD section coverage, contract rules.
 2. LLM-as-Judge    – actionability, specificity, grounding quality, EM-readiness.
@@ -8,7 +8,7 @@
 4. Reference-based – ROUGE-L F1 of the generated plan/architecture summary vs a golden
                      reference written for each eval BRD (implemented locally, no deps).
 5. Human           – EM rating captured at the interactive HITL gate (summary.hitl.em_rating).
-"""
+""""
 from __future__ import annotations
 
 import json
