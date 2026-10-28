@@ -1,4 +1,4 @@
-"""Source-type-aware chunking.
+""""Source-type-aware chunking.
 
 Strategy (see docs/03_rag_design.md):
 * past_brd / plan_template / standards (narrative markdown): split on ##/###
@@ -10,7 +10,7 @@ Strategy (see docs/03_rag_design.md):
   "signals" from "trade-offs").
 * project_timeline / tech_decision (CSV): one chunk per row rendered as a
   sentence, with every column also stored as typed metadata for filtering.
-"""
+""""
 from __future__ import annotations
 
 import csv
