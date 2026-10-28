@@ -1,10 +1,10 @@
-"""BRD parser tool (Layer 1: ingestion & parsing).
+""""BRD parser tool (Layer 1: ingestion & parsing).
 
 Reads .md/.txt/.docx, splits into canonical sections, extracts requirements with
 IDs and priorities, classifies them, extracts constraints, and flags
 ambiguities, contradictions and missing sections. Deterministic on purpose: the
 parser is the system's source of truth for scope, so it must be reproducible.
-"""
+""""
 from __future__ import annotations
 
 import re
